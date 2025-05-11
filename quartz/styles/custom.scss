@@ -1,3 +1,15 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+.table-view-tr-header .dataview {
+    &::before {
+        content: " (";
+    }
+    &::after {
+        content: ")";
+    }
+}
+
+.small-text {
+    font-size: 80%;
+}
