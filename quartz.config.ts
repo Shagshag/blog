@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     locale: "fr-FR",
     baseUrl: "www.shagshag.net",
     ignorePatterns: ["private", "templates", ".obsidian"],
-    defaultDateType: "modified",
+    defaultDateType: "created",
     theme: {
       fontOrigin: "local",
       cdnCaching: false,
