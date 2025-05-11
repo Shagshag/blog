@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import * as Component from "./quartz/components"
 
 /**
  * Quartz 4 Configuration
@@ -76,7 +77,37 @@ const config: QuartzConfig = {
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
-      Plugin.FolderPage(),
+      Plugin.FolderPage({
+        beforeBody: [
+          Component.ConditionalRender({
+            component: Component.Breadcrumbs({rootName: "Accueil"}),
+            condition: (page) => page.fileData.slug !== "index",
+          }),
+          Component.ArticleTitle(),
+          Component.ContentMeta(),
+          Component.TagList(),
+        ],
+        left: [
+          Component.PageTitle(),
+          Component.MobileOnly(Component.Spacer()),
+          Component.Flex({
+            components: [
+              {
+                Component: Component.Search(),
+                grow: true,
+              },
+              { Component: Component.Darkmode() },
+              { Component: Component.ReaderMode() },
+            ],
+          }),
+          Component.Explorer(),
+        ],
+        right: [
+          Component.Graph(),
+          Component.DesktopOnly(Component.TableOfContents()),
+          Component.Backlinks(),
+        ],
+      }),
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
