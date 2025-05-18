@@ -9,7 +9,7 @@ import * as Component from "./quartz/components"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🐢 Shagshag",
+    pageTitle: "🐢<span class=\"desktop-only\"> Shagshag</span>",
     pageTitleSuffix: " - Shagshag",
     enableSPA: true,
     enablePopovers: true,
