@@ -14,7 +14,7 @@ C'est gadget et surement pas une bonne idée de l'utiliser alors que Safari ne l
 
 Comme aujourd'hui je m'amuse avec [Quartz](https://quartz.jzhao.xyz/) pour générer ce site, j'en ai fait un plugin :
 
-```ts
+```tsx
 import { QuartzEmitterPlugin } from "../types"
 
 const defaultOption = "🪴"
