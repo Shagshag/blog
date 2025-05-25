@@ -10,7 +10,7 @@ Par défaut le plugin [Latex](https://quartz.jzhao.xyz/plugins/Latex) est activ�
 
 De même je n'ai quasiment pas d'image sur ce site, désactiver [CustomOgImages](https://quartz.jzhao.xyz/plugins/CustomOgImages) permet d'économiser du temps de génération.
 
-Avec le plugin [[./Utiliser un emoji comme favicon|FaviconEmoji]], j'ai pu désactiver [Favicon](https://quartz.jzhao.xyz/plugins/Favicon) mais il a fallu [modifier `quartz/components/Head.tsx`](https://github.com/Shagshag/blog/commit/2621f1c24d68c9089a90a887349994b543f8ebaa) pour retirer les éléments inutiles. Quartz n'est pas très souple sur le contenu généré.
+Avec le plugin [FaviconEmoji](Utiliser%20un%20emoji%20comme%20favicon.md), j'ai pu désactiver [Favicon](https://quartz.jzhao.xyz/plugins/Favicon) mais il a fallu [modifier `quartz/components/Head.tsx`](https://github.com/Shagshag/blog/commit/2621f1c24d68c9089a90a887349994b543f8ebaa) pour retirer les éléments inutiles. Quartz n'est pas très souple sur le contenu généré.
 
 Au final les appels se réduisent à un fichier CSS et deux JS, tous locaux. C'est bien 🙂
 

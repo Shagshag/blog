@@ -10,7 +10,7 @@ Le mode debug de PrestaShop 1.7 fonctionne trop bien. Par défaut il s’arrête
 
 Par exemple avec PHP 7.4, Doctrine utilisé par PrestaShop affiche un Warning : <https://github.com/doctrine/DoctrineORMModule/issues/579> ce qui empêche tout débogage.
 
-![](../medias/2020/03/2020-03-04-17_38_11-Mozilla-Firefox.png)
+![](2020-03-04-17_38_11-Mozilla-Firefox.png)
 
 Pour corriger tout cela, il faut dire à Symfony quelles erreurs afficher :
 
