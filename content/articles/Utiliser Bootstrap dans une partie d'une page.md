@@ -1,7 +1,11 @@
 ---
-{"date":"2020-06-24T15:52:54+02:00","tags":["bootstrap","css","less"],"publish":true,"PassFrontmatter":true}
+date: 2020-06-24T15:52:54+02:00
+tags:
+  - bootstrap
+  - css
+  - less
+publish: true
 ---
-
 
 J’ai eu a créer une page avec Bootstrap dans un site n’utilisant pas Bootstrap
 

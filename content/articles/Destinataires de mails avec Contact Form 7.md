@@ -1,7 +1,10 @@
 ---
-{"date":"2020-10-27T15:19:00+01:00","tags":["contact_form_7","wordpress"],"publish":true,"PassFrontmatter":true}
+date: 2020-10-27T15:19:00+01:00
+tags:
+  - contact_form_7
+  - wordpress
+publish: true
 ---
-
 
 Ça n’a rien de nouveau mais je ne m’en souviens jamais donc voici comment avoir un destinataire du mail envoyé par contact form 7 en fonction du choix fait par l’utilisateur dans le formulaire.
 

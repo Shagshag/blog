@@ -1,7 +1,9 @@
 ---
-{"date":"2025-05-16T10:00:01+02:00","publish":true,"tags":["MySQL"],"PassFrontmatter":true}
+date: 2025-05-16T10:00:01+02:00
+publish: true
+tags:
+  - MySQL
 ---
-
 Doctrine est pratique mais pour voir la requête finale exécutée par le serveur c'est compliqué.
 Le plus simple est de demander directement à ce dernier de les enregistrer.
 

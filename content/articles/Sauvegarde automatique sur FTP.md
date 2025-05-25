@@ -1,7 +1,12 @@
 ---
-{"date":"2021-10-20T11:25:27+02:00","tags":["backup","bash","ftp","sysadmin"],"publish":true,"PassFrontmatter":true}
+date: 2021-10-20T11:25:27+02:00
+tags:
+  - backup
+  - bash
+  - ftp
+  - sysadmin
+publish: true
 ---
-
 
 A force je pense avoir un script de sauvegarde FTP efficace.
 

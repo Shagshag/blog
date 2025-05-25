@@ -1,7 +1,11 @@
 ---
-{"date":"2021-06-08T11:12:33+02:00","tags":["php","woocommerce","wordpress"],"publish":true,"PassFrontmatter":true}
+date: 2021-06-08T11:12:33+02:00
+tags:
+  - php
+  - woocommerce
+  - wordpress
+publish: true
 ---
-
 
 Dans WooCommerce chaque produit a [une page dédiée](https://docs.woocommerce.com/document/marketing-product-pages-writing/#section-4). Dans le panier, les produits renvoient à celles-ci.
 

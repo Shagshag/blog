@@ -1,7 +1,10 @@
 ---
-{"date":"2019-06-19T10:25:48+02:00","tags":["prestashop","shell"],"publish":true,"PassFrontmatter":true}
+date: 2019-06-19T10:25:48+02:00
+tags:
+  - prestashop
+  - shell
+publish: true
 ---
-
 
 ```sh
 cd img/p

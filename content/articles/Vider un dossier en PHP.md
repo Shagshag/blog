@@ -1,7 +1,9 @@
 ---
-{"date":"2018-10-04T08:35:17+02:00","tags":["php"],"publish":true,"PassFrontmatter":true}
+date: 2018-10-04T08:35:17+02:00
+tags:
+  - php
+publish: true
 ---
-
 
 J’utilise ce script pour vider un dossier rapidement. C’est pratique quand on a seulement un accès FTP et qu’on doit démarrer un nouveau projet.
 

@@ -1,7 +1,10 @@
 ---
-{"date":"2019-01-30T11:20:35+01:00","tags":["prestashop","smarty"],"publish":true,"PassFrontmatter":true}
+date: 2019-01-30T11:20:35+01:00
+tags:
+  - prestashop
+  - smarty
+publish: true
 ---
-
 
 Normalement le contenu des [pages CMS est statique dans PrestaShop](http://doc.prestashop.com/pages/viewpage.action?pageId=20840877) mais il peut être utile d’y afficher un module pour mettre les dernières réductions, un formulaire d’inscription ou n’importe quoi.
 

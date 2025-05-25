@@ -1,7 +1,9 @@
 ---
-{"date":"2020-12-15T19:21:12+01:00","tags":["prestashop"],"publish":true,"PassFrontmatter":true}
+date: 2020-12-15T19:21:12+01:00
+tags:
+  - prestashop
+publish: true
 ---
-
 
 Par construction PrestaShop ne peut pas gérer les images avec des ID supérieurs à 9 999 999 (7 chiffres). C’est déjà beaucoup et on a pas souvent besoin de plus mais j’ai eu affaire à un script d’import qui impose les ID d’images et donc ça arrive.
 
