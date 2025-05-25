@@ -1,7 +1,11 @@
 ---
-{"date":"2011-01-20T14:36:00+01:00","tags":["index_html","php","wordpress"],"publish":true,"PassFrontmatter":true}
+date: 2011-01-20T14:36:00+01:00
+tags:
+  - index_html
+  - php
+  - wordpress
+publish: true
 ---
-
 
 WordPress a une mauvaise habitude : si vous allez à la racine de votre blog en tapant <http://www.example.com/index.php,> il vous redirigera vers <http://www.example.com/> . De même <http://www.example.com/index.php?cat=1> est redirigé vers <http://www.example.com/?cat=1> .
 
