@@ -1,9 +1,12 @@
 ---
-{"date":"2019-05-02T11:03:13+02:00","tags":["php","wordpress"],"publish":true,"PassFrontmatter":true}
+date: 2019-05-02T11:03:13+02:00
+tags:
+  - php
+  - wordpress
+publish: true
 ---
 
-
-Voici un script qui supprime un site WordPress. C’est une adaptation de [[articles/Supprimer une boutique PrestaShop\|Supprimer une boutique PrestaShop]]. Il suffit de le placer à la racine du site en FTP ou autre et de le visiter avec son navigateur.
+Voici un script qui supprime un site WordPress. C’est une adaptation de [[./Supprimer une boutique PrestaShop|Supprimer une boutique PrestaShop]]. Il suffit de le placer à la racine du site en FTP ou autre et de le visiter avec son navigateur.
 
 ⚠ Le script supprime le répertoire de WordPress avec tous ses fichiers et sous répertoires et toutes les tables de la base de données qui ont le préfixe de WordPress.
 
