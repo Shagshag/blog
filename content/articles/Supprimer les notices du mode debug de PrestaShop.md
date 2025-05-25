@@ -1,16 +1,13 @@
 ---
-date: 2020-03-04T17:47:24+01:00
-tags:
-  - prestashop
-  - symfony
-publish: true
+{"date":"2020-03-04T17:47:24+01:00","tags":["prestashop","symfony"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 Le mode debug de PrestaShop 1.7 fonctionne trop bien. Par défaut il s’arrête sur toutes les erreurs, avertissement ou notice, ce qui fait que quand un problème, même minime, se trouve en amont de ce que vous voulez corriger, le système s’arrête avant la partie qui vous intéresse.
 
 Par exemple avec PHP 7.4, Doctrine utilisé par PrestaShop affiche un Warning : <https://github.com/doctrine/DoctrineORMModule/issues/579> ce qui empêche tout débogage.
 
-![](2020-03-04-17_38_11-Mozilla-Firefox.png)
+![](../medias/2020/03/2020-03-04-17_38_11-Mozilla-Firefox.png)
 
 Pour corriger tout cela, il faut dire à Symfony quelles erreurs afficher :
 

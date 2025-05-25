@@ -1,11 +1,7 @@
 ---
-date: 2025-05-11T16:00:01+02:00
-publish: true
-tags:
-  - Quartz
-  - favicon
-  - TypeScript
+{"date":"2025-05-11T16:00:01+02:00","publish":true,"tags":["Quartz","favicon","TypeScript"],"PassFrontmatter":true}
 ---
+
 Maintenant que [_quelques_ navigateurs supportent le SVG](https://caniuse.com/link-icon-svg) pour les [favicons](https://fr.wikipedia.org/wiki/Favicon), on peut utiliser les emoji directement avec cette balise :
 
 ```html

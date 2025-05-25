@@ -1,9 +1,7 @@
 ---
-date: 2018-07-19T14:00:18+02:00
-tags:
-  - wordpress
-publish: true
+{"date":"2018-07-19T14:00:18+02:00","tags":["wordpress"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 Comment changer un site WordPress de serveur en 3 étapes:
 

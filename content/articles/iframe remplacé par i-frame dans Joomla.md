@@ -1,9 +1,7 @@
 ---
-date: 2020-11-12T12:30:41+01:00
-tags:
-  - Joomla
-publish: true
+{"date":"2020-11-12T12:30:41+01:00","tags":["Joomla"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 Si dans Joomla les balises 
 ```html

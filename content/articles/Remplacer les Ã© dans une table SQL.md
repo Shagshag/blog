@@ -1,12 +1,7 @@
 ---
-date: 2017-12-13T09:03:38+01:00
-tags:
-  - encodage
-  - MySQL
-  - SQL
-  - utf-8
-publish: true
+{"date":"2017-12-13T09:03:38+01:00","tags":["encodage","MySQL","SQL","utf-8"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 Je garde ça ici parce que ça arrive mais pas suffisamment souvent pour que je m’en souvienne d’une fois sur l’autre.
 

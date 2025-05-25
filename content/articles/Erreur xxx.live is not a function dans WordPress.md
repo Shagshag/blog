@@ -1,10 +1,7 @@
 ---
-date: 2020-10-29T09:55:19+01:00
-tags:
-  - jQuery
-  - wordpress
-publish: true
+{"date":"2020-10-29T09:55:19+01:00","tags":["jQuery","wordpress"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 A partir de la version 5.5 de WordPress, jQuery Migrate n’est plus activé par défaut. Par conséquent les vieux plugins (dans mon cas un Divi version 3) peuvent ne plus fonctionner.
 

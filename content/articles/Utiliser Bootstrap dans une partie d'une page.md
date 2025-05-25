@@ -1,15 +1,11 @@
 ---
-date: 2020-06-24T15:52:54+02:00
-tags:
-  - bootstrap
-  - css
-  - less
-publish: true
+{"date":"2020-06-24T15:52:54+02:00","tags":["bootstrap","css","less"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 J’ai eu a créer une page avec Bootstrap dans un site n’utilisant pas Bootstrap
 
-![](2020-06-24-15_23_44-Wireframe.cc-_-The-go-to-wireframing-tool..png)
+![](../medias/2020/06/2020-06-24-15_23_44-Wireframe.cc-_-The-go-to-wireframing-tool..png)
 
 Bootstrap gérant l’apparence de toute la page, il fallait l’isoler dans une classe pour ne pas créer de conflits
 

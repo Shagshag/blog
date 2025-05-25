@@ -1,12 +1,7 @@
 ---
-date: 2011-05-13T07:50:00+02:00
-tags:
-  - développement
-  - exemple
-  - override
-  - prestashop
-publish: true
+{"date":"2011-05-13T07:50:00+02:00","tags":["développement","exemple","override","prestashop"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 Ce message se veut être un complément [au billet](http://www.webbax.ch/2011/05/04/prestashop-1-4-loverride-comment-ca-marche-et-ca-sert-a-quoi/) de [Webbax](http://www.webbax.ch)
 

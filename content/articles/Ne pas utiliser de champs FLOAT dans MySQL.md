@@ -1,9 +1,7 @@
 ---
-date: 2019-01-29T11:09:18+01:00
-tags:
-  - MySQL
-publish: true
+{"date":"2019-01-29T11:09:18+01:00","tags":["MySQL"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 En fait je ne sais pas pourquoi les float existent, c’est que des sources de bugs.
 

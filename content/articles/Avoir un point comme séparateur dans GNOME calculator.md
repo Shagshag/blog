@@ -1,11 +1,7 @@
 ---
-date: 2022-05-23T11:01:06+02:00
-tags:
-  - calculatrice
-  - shell
-  - ubuntu
-publish: true
+{"date":"2022-05-23T11:01:06+02:00","tags":["calculatrice","shell","ubuntu"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 Je dois faire plein de calculs à coller dans un css, c’est très gênant d’avoir à corriger tous les résultats pour remplacer les virgules par des points.
 

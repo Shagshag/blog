@@ -1,7 +1,7 @@
 ---
-title: Accueil
-publish: true
+{"title":"Accueil","publish":true,"PassFrontmatter":true}
 ---
+
 Bonjour et bienvenue sur mon site.
 
 Je suis Georges Cubas, tombé dans la programmation depuis que mon père a acheté un [Amstrad CPC 464](https://fr.wikipedia.org/wiki/Amstrad_CPC_464) au milieu des années 1980.
@@ -23,6 +23,16 @@ Vous pouvez me retrouver sur
 
 ## Derniers articles
 
-<div><table class="dataview table-view-table"><thead class="table-view-thead"><tr class="table-view-tr-header"><th class="table-view-th"><span></span><span class="dataview small-text">5</span></th><th class="table-view-th"><span></span></th></tr></thead><tbody class="table-view-tbody"><tr><td><span></span></td><td><span></span></td></tr><tr><td><span></span></td><td><span></span></td></tr><tr><td><span></span></td><td><span></span></td></tr><tr><td><span></span></td><td><span></span></td></tr><tr><td><span></span></td><td><span></span></td></tr></tbody></table></div>
+<!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.date), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true SORT date DESC LIMIT 5 -->
+<!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.date), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true SORT date DESC LIMIT 5 -->
 
-[Liste de tous les articles](articles.md)
+| Date            | Nom                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 16 mai 2025     | [[articles/Afficher les requêtes exécutées par le serveur SQL\|Afficher les requêtes exécutées par le serveur SQL]]       |
+| 11 mai 2025     | [[articles/Optimisation de Quartz\|Optimisation de Quartz]]                                                               |
+| 11 mai 2025     | [[articles/Utiliser un emoji comme favicon\|Utiliser un emoji comme favicon]]                                             |
+| 18 juillet 2022 | [[articles/Anonymiser les données de PrestaShop\|Anonymiser les données de PrestaShop]]                                   |
+| 23 mai 2022     | [[articles/Avoir un point comme séparateur dans GNOME calculator\|Avoir un point comme séparateur dans GNOME calculator]] |
+<!-- SerializedQuery END -->
+
+[[articles\|Liste de tous les articles]]

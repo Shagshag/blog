@@ -1,9 +1,7 @@
 ---
-date: 2013-06-24T10:02:00+02:00
-tags:
-  - php
-publish: true
+{"date":"2013-06-24T10:02:00+02:00","tags":["php"],"publish":true,"PassFrontmatter":true}
 ---
+
 
 La semaine dernière avec [Olea](http://www.oleacorner.com/) on est tombé sur un module PrestaShop tout moche qui avait un code de ce style :
 
