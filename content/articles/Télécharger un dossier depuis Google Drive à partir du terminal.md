@@ -1,9 +1,14 @@
 ---
-{"date":"2020-10-29T18:15:30+01:00","tags":["google","drive","shell","ssh"],"publish":true,"PassFrontmatter":true}
+date: 2020-10-29T18:15:30+01:00
+tags:
+  - google
+  - drive
+  - shell
+  - ssh
+publish: true
 ---
 
-
-Pour faire suite à [[articles/Télécharger un fichier depuis Google Drive à partir du terminal\|Télécharger un fichier depuis Google Drive à partir du terminal]], j’ai eu à télécharger tout un dossier et la méthode décrite ne peut pas fonctionner.
+Pour faire suite à [[./Télécharger un fichier depuis Google Drive à partir du terminal|Télécharger un fichier depuis Google Drive à partir du terminal]], j’ai eu à télécharger tout un dossier et la méthode décrite ne peut pas fonctionner.
 
 J’ai donc utilisé [rclone](https://rclone.org) et ça fonctionne très bien. C’est plus long parce qu’[il faut créer une application comme décrit dans la documentation](https://rclone.org/drive/#making-your-own-client-id) mais une fois configuré c’est simple.
 
