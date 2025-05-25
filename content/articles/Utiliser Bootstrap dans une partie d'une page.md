@@ -9,7 +9,7 @@ publish: true
 
 J’ai eu a créer une page avec Bootstrap dans un site n’utilisant pas Bootstrap
 
-![](../medias/2020/06/2020-06-24-15_23_44-Wireframe.cc-_-The-go-to-wireframing-tool..png)
+![](2020-06-24-15_23_44-Wireframe.cc-_-The-go-to-wireframing-tool..png)
 
 Bootstrap gérant l’apparence de toute la page, il fallait l’isoler dans une classe pour ne pas créer de conflits
 
