@@ -1,7 +1,12 @@
 ---
-{"date":"2022-07-18T14:20:49+02:00","tags":["anonymisation","développement","prestashop","SQL"],"publish":true,"PassFrontmatter":true}
+date: 2022-07-18T14:20:49+02:00
+tags:
+  - anonymisation
+  - développement
+  - prestashop
+  - SQL
+publish: true
 ---
-
 
 Pour créer un environnement de développement, on duplique celui de production. Sauf qu’il ne faut pas garder les infos personnelles des clients. Déjà c’est dangereux, si vous gérez mal votre affaire vous risquez d’envoyer des mails aux clients et ça force tous les développeurs et intervenants à faire attention au RGPD.
 
