@@ -1,7 +1,13 @@
 ---
-{"date":"2012-05-14T08:43:00+02:00","tags":["coding","développement","max_input_vars","parse_str","php"],"publish":true,"PassFrontmatter":true}
+date: 2012-05-14T08:43:00+02:00
+tags:
+  - coding
+  - développement
+  - max_input_vars
+  - parse_str
+  - php
+publish: true
 ---
-
 
 Bon c’est un peu technique mais la fonction PHP [parse\_str](http://www.php.net/manual/fr/function.parse-str.php) est limité par la directive [max\_input\_vars](http://www.php.net/manual/en/info.configuration.php#ini.max-input-vars) ce qui fait que par défaut on ne peut traiter que 1000 paramètres avec cette fonction.
 
