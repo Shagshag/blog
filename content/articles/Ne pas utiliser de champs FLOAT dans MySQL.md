@@ -1,5 +1,5 @@
 ---
-{"date":"2019-01-29T11:09:18+01:00","tags":["MySQL"],"publish":true,"PassFrontmatter":true}
+{"date":"2019-01-29T11:09:18+01:00","tags":["SQL"],"publish":true,"PassFrontmatter":true}
 ---
 
 

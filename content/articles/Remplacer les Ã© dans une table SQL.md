@@ -1,5 +1,5 @@
 ---
-{"date":"2017-12-13T09:03:38+01:00","tags":["encodage","MySQL","SQL","utf-8"],"publish":true,"PassFrontmatter":true}
+{"date":"2017-12-13T09:03:38+01:00","tags":["encodage","SQL","utf-8"],"publish":true,"PassFrontmatter":true}
 ---
 
 
