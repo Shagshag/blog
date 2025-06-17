@@ -4,7 +4,7 @@
 
 Il n'est pas possible en SQL de définir l'auto-incrément d'une table en fonction d'une requête.
 
-```SQL
+```sql
 ALTER TABLE `table` AUTO_INCREMENT = 10; -- ✅ Valide
 ALTER TABLE `table` AUTO_INCREMENT = (SELECT (MAX(`number`) + 1) FROM `other_table`); -- ❌ Invalide
 
@@ -13,7 +13,7 @@ ALTER TABLE `table` AUTO_INCREMENT = (SELECT (MAX(`number`) + 1) FROM `other_tab
 Il faut donc passer par une [procédure](https://sql.sh/cours/procedure-stockee) qui créé une requête à partir du résultat de la requête voulue puis l'execute.
 ## Pour une nouvelle table
 
-```SQL
+```sql
 DELIMITER $
 CREATE PROCEDURE `tbl_wth_ai`(IN `ai_to_start` INT)
 BEGIN
@@ -40,7 +40,7 @@ DROP PROCEDURE IF EXISTS tbl_wth_ai;
 
 ## Pour une table existante
 
-```SQL
+```sql
 DELIMITER $
 CREATE PROCEDURE `tbl_wth_ai`(IN `ai_to_start` INT)
 BEGIN

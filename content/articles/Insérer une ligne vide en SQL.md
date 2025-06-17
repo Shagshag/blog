@@ -6,7 +6,7 @@ Rien de surprenant mais c'est la première fois que j'ai à insérer une ligne s
 
 La requête est donc
 
-```SQL
+```sql
 INSERT INTO `table` () VALUES ();
 ```
 
