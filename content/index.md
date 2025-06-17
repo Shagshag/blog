@@ -26,13 +26,13 @@ Vous pouvez me retrouver sur
 <!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.date), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true SORT date DESC LIMIT 5 -->
 <!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.date), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true SORT date DESC LIMIT 5 -->
 
-| Date            | Nom                                                                                                                    |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| 03 juin 2025    | [[articles/Accéder à une variable CSS en JavaScript\|Accéder à une variable CSS en JavaScript]]                     |
-| 16 mai 2025     | [[articles/Afficher les requêtes exécutées par le serveur SQL\|Afficher les requêtes exécutées par le serveur SQL]] |
-| 11 mai 2025     | [[articles/Optimisation de Quartz\|Optimisation de Quartz]]                                                         |
-| 11 mai 2025     | [[articles/Utiliser un emoji comme favicon\|Utiliser un emoji comme favicon]]                                       |
-| 18 juillet 2022 | [[articles/Anonymiser les données de PrestaShop\|Anonymiser les données de PrestaShop]]                             |
+| Date         | Nom                                                                                                                                            |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| 17 juin 2025 | [[articles/Créer une table dont l'auto-incrément dépend d'une requête SQL\|Créer une table dont l'auto-incrément dépend d'une requête SQL]] |
+| 17 juin 2025 | [[articles/Insérer une ligne vide en SQL\|Insérer une ligne vide en SQL]]                                                                   |
+| 03 juin 2025 | [[articles/Accéder à une variable CSS en JavaScript\|Accéder à une variable CSS en JavaScript]]                                             |
+| 16 mai 2025  | [[articles/Afficher les requêtes exécutées par le serveur SQL\|Afficher les requêtes exécutées par le serveur SQL]]                         |
+| 11 mai 2025  | [[articles/Optimisation de Quartz\|Optimisation de Quartz]]                                                                                 |
 <!-- SerializedQuery END -->
 
 [[articles\|Liste de tous les articles]]
