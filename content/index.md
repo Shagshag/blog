@@ -1,5 +1,5 @@
 ---
-{"title":"Accueil","publish":true,"PassFrontmatter":true}
+{"title":"Accueil","publish":true,"created":"2025-05-09T18:36","updated":"2025-08-07T22:20:38.968+02:00","PassFrontmatter":true}
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -21,18 +21,18 @@ Vous pouvez me retrouver sur
 - [LinkedIn](https://www.linkedin.com/in/georges-cubas/)
 - [Malt](https://en.malt.fr/profile/georgescubas)
 
-## Derniers articles
+## Dernières modifications
 
-<!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.date), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true SORT date DESC LIMIT 5 -->
-<!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.date), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true SORT date DESC LIMIT 5 -->
+<!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" SORT file.frontmatter.updated DESC LIMIT 5 -->
+<!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" SORT file.frontmatter.updated DESC LIMIT 5 -->
 
-| Date            | Nom                                                                                                                                            |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| 31 juillet 2025 | [[articles/Installer l'extension ssh2 pour PHP sous macOS\|Installer l'extension ssh2 pour PHP sous macOS]]                                 |
-| 17 juin 2025    | [[articles/Créer une table dont l'auto-incrément dépend d'une requête SQL\|Créer une table dont l'auto-incrément dépend d'une requête SQL]] |
-| 17 juin 2025    | [[articles/Insérer une ligne vide en SQL\|Insérer une ligne vide en SQL]]                                                                   |
-| 03 juin 2025    | [[articles/Accéder à une variable CSS en JavaScript\|Accéder à une variable CSS en JavaScript]]                                             |
-| 16 mai 2025     | [[articles/Afficher les requêtes exécutées par le serveur SQL\|Afficher les requêtes exécutées par le serveur SQL]]                         |
+| Date            | Nom                                                                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 31 juillet 2025 | [[développement/Installer l'extension ssh2 pour PHP sous macOS\|Installer l'extension ssh2 pour PHP sous macOS]]                                 |
+| 17 juin 2025    | [[développement/Afficher les requêtes exécutées par le serveur SQL\|Afficher les requêtes exécutées par le serveur SQL]]                         |
+| 17 juin 2025    | [[développement/Ne pas utiliser de champs FLOAT dans MySQL\|Ne pas utiliser de champs FLOAT dans MySQL]]                                         |
+| 17 juin 2025    | [[développement/Remplacer les Ã© dans une table SQL\|Remplacer les Ã© dans une table SQL]]                                                       |
+| 17 juin 2025    | [[développement/Créer une table dont l'auto-incrément dépend d'une requête SQL\|Créer une table dont l'auto-incrément dépend d'une requête SQL]] |
 <!-- SerializedQuery END -->
 
-[[articles\|Liste de tous les articles]]
+[[articles/index\|Liste de tous les articles]]
