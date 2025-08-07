@@ -103,7 +103,7 @@ export function transformInternalLink(link: string): RelativeURL {
   // manually add ext here as we want to not strip 'index' if it has an extension
   const simpleSlug = simplifySlug(slugifyFilePath(fp as FilePath))
   const joined = joinSegments(stripSlashes(prefix), stripSlashes(simpleSlug))
-  const trail = folderPath ? "/" : ""
+  const trail = folderPath ? "/" : ".html"
   const res = (_addRelativeToStart(joined) + trail + anchor) as RelativeURL
   return res
 }
@@ -169,7 +169,8 @@ export function pathToRoot(slug: FullSlug): RelativeURL {
 }
 
 export function resolveRelative(current: FullSlug, target: FullSlug | SimpleSlug): RelativeURL {
-  const res = joinSegments(pathToRoot(current), simplifySlug(target as FullSlug)) as RelativeURL
+  const trail = isFolderPath(target as string) ? (target.endsWith("/") ? "" : "/") : (target.endsWith(".html") ? "" : ".html")
+  const res = joinSegments(pathToRoot(current), simplifySlug(`${target}${trail}` as FullSlug)) as RelativeURL
   return res
 }
 
