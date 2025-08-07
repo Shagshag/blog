@@ -1,5 +1,5 @@
 ---
-{"title":"Accueil","publish":true,"created":"2025-05-09T18:36","updated":"2025-08-07T22:20:38.968+02:00","PassFrontmatter":true}
+{"title":"Accueil","publish":true,"created":"2025-05-09T18:36","updated":"2025-08-07T22:35:18.204+02:00","PassFrontmatter":true}
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -35,4 +35,3 @@ Vous pouvez me retrouver sur
 | 17 juin 2025    | [[développement/Créer une table dont l'auto-incrément dépend d'une requête SQL\|Créer une table dont l'auto-incrément dépend d'une requête SQL]] |
 <!-- SerializedQuery END -->
 
-[[articles/index\|Liste de tous les articles]]
