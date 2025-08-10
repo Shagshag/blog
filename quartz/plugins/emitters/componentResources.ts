@@ -23,6 +23,7 @@ type ComponentResources = {
   css: string[]
   beforeDOMLoaded: string[]
   afterDOMLoaded: string[]
+  page404: string[]
 }
 
 function getComponentResources(ctx: BuildCtx): ComponentResources {
@@ -38,6 +39,7 @@ function getComponentResources(ctx: BuildCtx): ComponentResources {
     css: new Set<string>(),
     beforeDOMLoaded: new Set<string>(),
     afterDOMLoaded: new Set<string>(),
+    page404: new Set<string>(),
   }
 
   function normalizeResource(resource: string | string[] | undefined): string[] {
@@ -47,20 +49,23 @@ function getComponentResources(ctx: BuildCtx): ComponentResources {
   }
 
   for (const component of allComponents) {
-    const { css, beforeDOMLoaded, afterDOMLoaded } = component
+    const { css, beforeDOMLoaded, afterDOMLoaded, page404 } = component
     const normalizedCss = normalizeResource(css)
     const normalizedBeforeDOMLoaded = normalizeResource(beforeDOMLoaded)
     const normalizedAfterDOMLoaded = normalizeResource(afterDOMLoaded)
+    const normalizedpage404 = normalizeResource(page404)
 
     normalizedCss.forEach((c) => componentResources.css.add(c))
     normalizedBeforeDOMLoaded.forEach((b) => componentResources.beforeDOMLoaded.add(b))
     normalizedAfterDOMLoaded.forEach((a) => componentResources.afterDOMLoaded.add(a))
+    normalizedpage404.forEach((a) => componentResources.page404.add(a))
   }
 
   return {
     css: [...componentResources.css],
     beforeDOMLoaded: [...componentResources.beforeDOMLoaded],
     afterDOMLoaded: [...componentResources.afterDOMLoaded],
+    page404: [...componentResources.page404],
   }
 }
 
@@ -103,7 +108,7 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
           gtag('event', 'page_view', { page_title: document.title, page_location: location.href });
         });
       };
-      
+
       document.head.appendChild(gtagScript);
     `)
   } else if (cfg.analytics?.provider === "plausible") {
@@ -162,7 +167,7 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       })\`
       posthogScript.onload = () => {
         posthog.capture('$pageview', { path: location.pathname });
-      
+
         document.addEventListener('nav', () => {
           posthog.capture('$pageview', { path: location.pathname });
         });
@@ -182,7 +187,7 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
           window.tinylytics.triggerUpdate();
         });
       };
-      
+
       document.head.appendChild(tinylyticsScript);
     `)
   } else if (cfg.analytics?.provider === "cabin") {
@@ -213,6 +218,32 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       document.dispatchEvent(event)
     `)
   }
+
+  componentResources.page404.push(`
+      (async function(){
+        const path = window.location.pathname.split('/');
+        if (path.at(1) == 'tag') {
+          window.location = '/tags/' + path.at(2) + '.html';
+        }
+        const title = path.at(-1).split('.html').at(0);
+        const slugify = (str) => String(str)
+            .normalize('NFKD') // split accented characters into their base characters and diacritical marks
+            .replace(/[\\u0300-\\u036f]/g, '') // remove all the accents, which happen to be all in the \\u03xx UNICODE block.
+            .trim() // trim leading or trailing whitespace
+            .toLowerCase() // convert to lowercase
+            .replace(/[^a-z0-9 -]/g, '') // remove non-alphanumeric characters
+            .replace(/\\s+/g, '-') // replace spaces with hyphens
+            .replace(/-+/g, '-'); // remove consecutive hyphens
+        const currentSlug = slugify(title);
+        const data = await fetchData
+        Object.values(data).forEach((pageData) => {
+            const pageSlug = slugify(pageData.title);
+            if (pageSlug === currentSlug) {
+                window.location = '/' + pageData.slug + '.html';
+            }
+        })
+    })();
+  `)
 }
 
 // This emitter should not update the `resources` parameter. If it does, partial
@@ -280,9 +311,10 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
         styles,
       )
 
-      const [prescript, postscript] = await Promise.all([
+      const [prescript, postscript, page404] = await Promise.all([
         joinScripts(componentResources.beforeDOMLoaded),
         joinScripts(componentResources.afterDOMLoaded),
+        joinScripts(componentResources.page404),
       ])
 
       yield write({
@@ -316,6 +348,13 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
         slug: "postscript" as FullSlug,
         ext: ".js",
         content: postscript,
+      })
+
+      yield write({
+        ctx,
+        slug: "404" as FullSlug,
+        ext: ".js",
+        content: page404,
       })
     },
     async *partialEmit() {},

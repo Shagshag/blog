@@ -22,6 +22,7 @@ export type QuartzComponent = ComponentType<QuartzComponentProps> & {
   css?: StringResource
   beforeDOMLoaded?: StringResource
   afterDOMLoaded?: StringResource
+  page404?: StringResource
 }
 
 export type QuartzComponentConstructor<Options extends object | undefined = undefined> = (
