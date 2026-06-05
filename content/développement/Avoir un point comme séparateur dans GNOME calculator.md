@@ -1,7 +1,11 @@
 ---
-{"date":"2022-05-23T11:01:06+02:00","tags":["calculatrice","shell","ubuntu"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:07:01.325+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:07
+tags:
+  - calculatrice
+  - shell
+  - ubuntu
 ---
-
 
 Je dois faire plein de calculs à coller dans un css, c’est très gênant d’avoir à corriger tous les résultats pour remplacer les virgules par des points.
 
@@ -11,4 +15,4 @@ Pour que la calculatrice d’Ubuntu utilise le point comme séparateur décimal,
 LC_NUMERIC=en_US.UTF-8 gnome-calculator
 ```
 
-Source : https://forums.linuxmint.com/viewtopic.php?p=1366261&sid=628026c11647ae21afbe12b8eec60941#p1366261
+Source : https://forums.linuxmint.com/viewtopic.php?p=1366261\&sid=628026c11647ae21afbe12b8eec60941#p1366261

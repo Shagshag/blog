@@ -1,13 +1,15 @@
 ---
-{"date":"2018-07-19T14:00:18+02:00","tags":["wordpress"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:07:58.012+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:07
+tags:
+  - wordpress
 ---
-
 
 Comment changer un site WordPress de serveur en 3 étapes:
 
 Malgré moi je fait de plus en plus de WordPress. Donc je note ça pour plus tard.
 
-Il faut être sur le serveur source dans le dossier du site.  
+Il faut être sur le serveur source dans le dossier du site.\
 On suppose que le site sera dans le dossier www du serveur de destination
 
 1. Copier les fichiers sur le nouveau serveur

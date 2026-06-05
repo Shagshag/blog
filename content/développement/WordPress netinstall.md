@@ -1,7 +1,11 @@
 ---
-{"date":"2018-03-23T15:35:44+01:00","tags":["netinstall","php","wordpress"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T08:26:18.380+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T08:26
+tags:
+  - netinstall
+  - php
+  - wordpress
 ---
-
 
 Ce script permet d’installer WordPress sans avoir à télécharger l’archive, la décompresser et la déposer sur un serveur.
 

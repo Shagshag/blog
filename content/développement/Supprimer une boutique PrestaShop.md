@@ -1,7 +1,10 @@
 ---
-{"date":"2018-03-16T14:07:18+01:00","tags":["php","prestashop"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:08:28.788+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:08
+tags:
+  - php
+  - prestashop
 ---
-
 
 Voici un script qui supprime une boutique PrestaShop. Il suffit de le placer à la racine de sa boutique en FTP ou autre et de le visiter avec son navigateur.
 

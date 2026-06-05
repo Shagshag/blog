@@ -1,7 +1,11 @@
 ---
-{"date":"2021-07-28T15:12:00+02:00","tags":["php","wordpress","popup_builder"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:08:07.641+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:08
+tags:
+  - php
+  - wordpress
+  - popup_builder
 ---
-
 
 La version gratuite du plugin [WordPress Popup Builder](https://wordpress.org/plugins/popup-builder/) ne permet pas programmer l’affichage des popups. Cependant elle créé le [filtre](https://developer.wordpress.org/plugins/hooks/filters/) sgpbOtherConditions qui permet de les désactiver.
 

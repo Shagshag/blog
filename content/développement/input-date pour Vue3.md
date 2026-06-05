@@ -1,9 +1,12 @@
 ---
-{"date":"2020-11-24T09:59:37+01:00","tags":["javascript","vue3"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:07:52.509+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:07
+tags:
+  - javascript
+  - vue3
 ---
 
-
-Pareil que pour [[développement/nl2br pour Vue3\|nl2br]], j’ai voulu utiliser un champ date dans Vue3 mais [le code que j’utilisais dans vue.js](https://acdcjunior.github.io/how-bind-date-object-to-input-date-vue.js-v-model.html) ne fonctionne pas.
+Pareil que pour [[nl2br pour Vue3|nl2br]], j’ai voulu utiliser un champ date dans Vue3 mais [le code que j’utilisais dans vue.js](https://acdcjunior.github.io/how-bind-date-object-to-input-date-vue.js-v-model.html) ne fonctionne pas.
 
 Voici mon adaptation
 

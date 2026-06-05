@@ -1,7 +1,10 @@
 ---
-{"date":"2020-11-24T09:48:41+01:00","tags":["javascript","vue3"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:08:04.757+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:08
+tags:
+  - javascript
+  - vue3
 ---
-
 
 J’ai voulu utiliser [nl2br pour vue.js](https://github.com/inouetakuya/vue-nl2br/) mais il n’est pas compatible avec Vue3.
 

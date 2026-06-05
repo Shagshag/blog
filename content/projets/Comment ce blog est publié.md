@@ -1,9 +1,13 @@
 ---
-{"date":"2026-06-05T00:00:00","publish":true,"tags":["obsidian","blog","quartz"],"created":"2026-06-05T00:00:00","updated":"2026-06-05T23:48:51.987+02:00","PassFrontmatter":true}
+publish: true
+modified: 2026-06-05T23:40
+tags:
+  - obsidian
+  - blog
+  - quartz
 ---
 
-
-En 2014 j'écrivais [[projets/Dur de trouver un éditeur Markdown\|un post sur ma recherche d'un éditeur Markdown]]. Je voulais quelque chose qui affiche un aperçu formaté, gère les images locales, et permette de naviguer entre les pages liées comme un wiki. Aucun éditeur ne faisait tout ça. J'avais fini par me contenter de Haroopad.
+En 2014 j'écrivais [[Dur de trouver un éditeur Markdown|un post sur ma recherche d'un éditeur Markdown]]. Je voulais quelque chose qui affiche un aperçu formaté, gère les images locales, et permette de naviguer entre les pages liées comme un wiki. Aucun éditeur ne faisait tout ça. J'avais fini par me contenter de Haroopad.
 
 Douze ans plus tard j'ai exactement ce que je cherchais. Et c'est aussi ce qui publie ce blog.
 

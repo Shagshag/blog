@@ -1,7 +1,9 @@
 ---
-{"date":"2019-01-29T11:09:18+01:00","tags":["SQL"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-06-17T19:56:12.787+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-06-17T19:56
+tags:
+  - SQL
 ---
-
 
 En fait je ne sais pas pourquoi les float existent, c’est que des sources de bugs.
 

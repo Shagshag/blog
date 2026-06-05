@@ -1,7 +1,12 @@
 ---
-{"date":"2021-10-20T11:25:27+02:00","tags":["backup","bash","ftp","sysadmin"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:08:18.423+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:08
+tags:
+  - backup
+  - bash
+  - ftp
+  - sysadmin
 ---
-
 
 A force je pense avoir un script de sauvegarde FTP efficace.
 

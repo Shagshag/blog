@@ -1,7 +1,12 @@
 ---
-{"date":"2020-07-07T17:54:59+02:00","tags":["contact_form_7","javascript","popup_maker","wordpress"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:07:04.092+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:07
+tags:
+  - contact_form_7
+  - javascript
+  - popup_maker
+  - wordpress
 ---
-
 
 [Popup Maker](https://wppopupmaker.com/) peut [réagir aux validations des formulaires](https://docs.wppopupmaker.com/article/224-close-popup-and-create-cookie-after-contact-form-7-submission) de [Contact Form 7](https://contactform7.com/). Enfin il devrait parce que ça ne fonctionne plus.
 

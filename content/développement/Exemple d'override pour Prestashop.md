@@ -1,7 +1,12 @@
 ---
-{"date":"2011-05-13T07:50:00+02:00","tags":["développement","exemple","override","prestashop"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:07:23.167+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:07
+tags:
+  - développement
+  - exemple
+  - override
+  - prestashop
 ---
-
 
 Ce message se veut être un complément [au billet](http://www.webbax.ch/2011/05/04/prestashop-1-4-loverride-comment-ca-marche-et-ca-sert-a-quoi/) de [Webbax](http://www.webbax.ch)
 
@@ -44,6 +49,6 @@ class ObjectModel extends ObjectModelCore
 
 C’est petit hein ?
 
-Le principe est simple, pour chaque [méthode](http://www.php.net/manual/fr/language.oop5.basic.php) (*add()*, *update()* et *delete()* ), on laisse l’[objet parent](http://www.php.net/manual/fr/language.oop5.inheritance.php) faire son travail ( *parent::add()* ) et en fonction du résultat on appelle ou non le hook.
+Le principe est simple, pour chaque [méthode](http://www.php.net/manual/fr/language.oop5.basic.php) (_add()_, _update()_ et _delete()_ ), on laisse l’[objet parent](http://www.php.net/manual/fr/language.oop5.inheritance.php) faire son travail ( _parent::add()_ ) et en fonction du résultat on appelle ou non le hook.
 
 Ainsi on a pas touché au cœur de Prestashop, le fichier ajouté est simple et facile à maintenir et surtout il sera compatible avec les futures version de Prestashop.

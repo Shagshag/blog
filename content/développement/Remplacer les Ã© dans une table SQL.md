@@ -1,7 +1,11 @@
 ---
-{"date":"2017-12-13T09:03:38+01:00","tags":["encodage","SQL","utf-8"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-06-17T19:56:17.379+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-06-17T19:56
+tags:
+  - encodage
+  - SQL
+  - utf-8
 ---
-
 
 Je garde ça ici parce que ça arrive mais pas suffisamment souvent pour que je m’en souvienne d’une fois sur l’autre.
 

@@ -1,5 +1,7 @@
 ---
-{"title":"Accueil","publish":true,"created":"2025-05-09T18:36","updated":"2025-08-07T22:35:18.204+02:00","PassFrontmatter":true}
+publish: true
+title: Accueil
+modified: 2025-08-07T22:20
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -24,14 +26,15 @@ Vous pouvez me retrouver sur
 ## Dernières modifications
 
 <!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" SORT file.frontmatter.updated DESC LIMIT 5 -->
+
 <!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" SORT file.frontmatter.updated DESC LIMIT 5 -->
 
 | Date            | Nom                                                                                                                                                 |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 31 juillet 2025 | [[développement/Installer l'extension ssh2 pour PHP sous macOS\|Installer l'extension ssh2 pour PHP sous macOS]]                                 |
-| 17 juin 2025    | [[développement/Afficher les requêtes exécutées par le serveur SQL\|Afficher les requêtes exécutées par le serveur SQL]]                         |
-| 17 juin 2025    | [[développement/Ne pas utiliser de champs FLOAT dans MySQL\|Ne pas utiliser de champs FLOAT dans MySQL]]                                         |
-| 17 juin 2025    | [[développement/Remplacer les Ã© dans une table SQL\|Remplacer les Ã© dans une table SQL]]                                                       |
-| 17 juin 2025    | [[développement/Créer une table dont l'auto-incrément dépend d'une requête SQL\|Créer une table dont l'auto-incrément dépend d'une requête SQL]] |
-<!-- SerializedQuery END -->
+| 31 juillet 2025 | [[Installer l'extension ssh2 pour PHP sous macOS]]                                 |
+| 17 juin 2025    | [[Afficher les requêtes exécutées par le serveur SQL]]                         |
+| 17 juin 2025    | [[Ne pas utiliser de champs FLOAT dans MySQL]]                                         |
+| 17 juin 2025    | [[Remplacer les Ã© dans une table SQL]]                                                       |
+| 17 juin 2025    | [[Créer une table dont l'auto-incrément dépend d'une requête SQL]] |
 
+<!-- SerializedQuery END -->

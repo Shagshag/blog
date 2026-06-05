@@ -1,7 +1,11 @@
 ---
-{"date":"2017-03-24T10:47:46+01:00","tags":["command line","php","prestashop"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:07:19.893+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:07
+tags:
+  - command line
+  - php
+  - prestashop
 ---
-
 
 Le plus propre pour lancer un script PrestaShop en ligne de commande est de créer un controller pour ça.
 

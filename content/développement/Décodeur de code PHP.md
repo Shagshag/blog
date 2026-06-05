@@ -1,7 +1,9 @@
 ---
-{"date":"2013-06-24T10:02:00+02:00","tags":["php"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:07:10.160+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:07
+tags:
+  - php
 ---
-
 
 La semaine dernière avec [Olea](http://www.oleacorner.com/) on est tombé sur un module PrestaShop tout moche qui avait un code de ce style :
 

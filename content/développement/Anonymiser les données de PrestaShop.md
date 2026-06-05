@@ -1,21 +1,27 @@
 ---
-{"date":"2022-07-18T14:20:49+02:00","tags":["anonymisation","développement","prestashop","SQL"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:01:27.801+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:01
+tags:
+  - anonymisation
+  - développement
+  - prestashop
+  - SQL
 ---
-
 
 Pour créer un environnement de développement, on duplique celui de production. Sauf qu’il ne faut pas garder les infos personnelles des clients. Déjà c’est dangereux, si vous gérez mal votre affaire vous risquez d’envoyer des mails aux clients et ça force tous les développeurs et intervenants à faire attention au RGPD.
 
 Donc on anonymise tout, c’est plus simple.
 
-Voici un script MariaDB qui anonymise les données clients : 
-- noms, 
-- prénoms, 
-- adresses, 
-- téléphones, 
-- e-mails, 
-- ip, 
-- communications.  
-Il remplace les lettres par xxx en respectant la casse, les n° de téléphone par 0 en respectant le format et passe les IP en 127.0.0.1.
+Voici un script MariaDB qui anonymise les données clients :
+
+- noms,
+- prénoms,
+- adresses,
+- téléphones,
+- e-mails,
+- ip,
+- communications.\
+  Il remplace les lettres par xxx en respectant la casse, les n° de téléphone par 0 en respectant le format et passe les IP en 127.0.0.1.
 
 ```sql
 UPDATE ps_address pa 

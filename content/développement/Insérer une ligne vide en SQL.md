@@ -1,5 +1,8 @@
 ---
-{"date":"2025-06-17T15:03:17+02:00","publish":true,"tags":["SQL"],"created":"2025-06-17T15:03","updated":"2025-06-17T19:53:14.606+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-06-17T19:53
+tags:
+  - SQL
 ---
 
 Rien de surprenant mais c'est la première fois que j'ai à insérer une ligne sans aucune donnée dans une table.

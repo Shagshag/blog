@@ -1,7 +1,9 @@
 ---
-{"date":"2020-12-15T19:21:12+01:00","tags":["prestashop"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:06:58.126+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:06
+tags:
+  - prestashop
 ---
-
 
 Par construction PrestaShop ne peut pas gérer les images avec des ID supérieurs à 9 999 999 (7 chiffres). C’est déjà beaucoup et on a pas souvent besoin de plus mais j’ai eu affaire à un script d’import qui impose les ID d’images et donc ça arrive.
 
@@ -25,7 +27,7 @@ RewriteRule ^([0-9])([0-9])([0-9])([0-9])([0-9])([0-9])([0-9])(\-[_a-zA-Z0-9-]*)
 
 Donc quand le serveur reçoit l’URL `https://example.com/123-large/mon-image.jpg` il affiche le fichier `/img/p/1/2/3/123-large.jpg`. C’est rapide et ça ne demande pas de ressource, PrestaShop n’est même pas appelé quand on veut afficher une image produit.
 
-Mais [on ne peut pas utiliser $10 dans un fichier .htaccess](https://stackoverflow.com/a/5849017/2530962), il est interprété comme $1 puis le caractère 0. Comme dans la dernière ligne de l’extrait ci-dessus on utilise $9, on ne peut pas aller plus loin.
+Mais \[on ne peut pas utiliser $10 dans un fichier .htaccess](https://stackoverflow.com/a/5849017/2530962), il est interprété comme $1 puis le caractère 0. Comme dans la dernière ligne de l’extrait ci-dessus on utilise \$9, on ne peut pas aller plus loin.
 
 ### Ma solution
 
@@ -58,13 +60,14 @@ class PageNotFoundController extends PageNotFoundControllerCore
     }
 }
 ```
+
 Code à placer dans `/override/controllers/front/PageNotFoundController.php`
 Fichier disponible sur [Github](https://gist.github.com/Shagshag/9b7ca766e6a855ba17d8af9c71412076)
 
 Le principe est le suivant :
 
 - quand le controller PageNotFound est appelé, on regarde si l’URL correspond à celle d’une image produit,
-- si oui on regarde si elle existe, 
+- si oui on regarde si elle existe,
   - si oui on l’affiche et c’est terminé
   - si non on affiche une image d’erreur
 - si non on laisse le controller gérer

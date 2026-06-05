@@ -1,11 +1,17 @@
 ---
-{"date":"2012-05-14T08:43:00+02:00","tags":["coding","développement","max_input_vars","parse_str","php"],"publish":true,"created":"2025-05-01T15:10","updated":"2025-05-10T10:01:16.454+02:00","PassFrontmatter":true}
+publish: true
+modified: 2025-05-10T10:01
+tags:
+  - coding
+  - développement
+  - max_input_vars
+  - parse_str
+  - php
 ---
-
 
 Bon c’est un peu technique mais la fonction PHP [parse\_str](http://www.php.net/manual/fr/function.parse-str.php) est limité par la directive [max\_input\_vars](http://www.php.net/manual/en/info.configuration.php#ini.max-input-vars) ce qui fait que par défaut on ne peut traiter que 1000 paramètres avec cette fonction.
 
-Comme j’ai eu besoin d’en traiter plus que ça voici une réécriture de parse_str sans limitation. Elle supporte les tableaux imbriqués et c’est déjà pas mal.
+Comme j’ai eu besoin d’en traiter plus que ça voici une réécriture de parse\_str sans limitation. Elle supporte les tableaux imbriqués et c’est déjà pas mal.
 
 ```php
 /**
@@ -38,4 +44,5 @@ function my_parse_str($string) {
 $array = my_parse_str($query);
 
 ```
+
 Disponible aussi sur [Github](https://gist.github.com/Shagshag/5849065) avec des améliorations
