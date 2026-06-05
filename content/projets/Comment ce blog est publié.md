@@ -1,6 +1,6 @@
 ---
 publish: true
-modified: 2026-06-05T23:40
+modified: 2026-06-05T23:48
 tags:
   - obsidian
   - blog
@@ -13,7 +13,7 @@ Douze ans plus tard j'ai exactement ce que je cherchais. Et c'est aussi ce qui p
 
 ## Comment j'ai découvert [Obsidian](https://obsidian.md)
 
-Quand je travaillais comme développeur chez [50Factory](https://www.50factory.com/modeles-3d/), j'avais besoin de documenter un projet d'[un outil pour configurer des guidons en 3D](medias/2026/06/50factory-3d.gif). J'utilisais [Dendron](https://dendron.so/), un plugin pour VSCode qui transforme l'éditeur en base de notes avec une structure hiérarchique. C'était bien intégré à mon environnement de développement, mais il fallait rester dans VSCode. Pas très pratique pour prendre des notes au vol.
+Quand je travaillais comme développeur chez [50Factory](https://www.50factory.com/modeles-3d/), j'avais besoin de documenter un projet d'un outil pour configurer des guidons en 3D. J'utilisais [Dendron](https://dendron.so/), un plugin pour VSCode qui transforme l'éditeur en base de notes avec une structure hiérarchique. C'était bien intégré à mon environnement de développement, mais il fallait rester dans VSCode. Pas très pratique pour prendre des notes au vol.
 
 C'est en regardant les vidéos de [morganeua](https://www.youtube.com/@morganeua) sur la prise de note que j'ai découvert Obsidian. Elle explique la méthode Zettelkasten — des notes atomiques, reliées entre elles, qui forment un réseau de connaissance. Je n'ai jamais vraiment réussi à appliquer le Zettelkasten comme il faut, mais Obsidian m'a convaincu en tant qu'outil.
 
