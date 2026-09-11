@@ -1,5 +1,6 @@
 ---
 publish: true
+created: 2025-05-01T15:10
 modified: 2025-06-17T19:56
 tags:
   - encodage
