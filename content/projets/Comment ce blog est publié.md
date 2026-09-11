@@ -1,6 +1,7 @@
 ---
 publish: true
-modified: 2026-06-05T23:48
+created: 2026-06-05T00:00:00
+modified: 2026-06-06T00:23
 tags:
   - obsidian
   - blog

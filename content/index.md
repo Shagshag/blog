@@ -1,7 +1,8 @@
 ---
 publish: true
 title: Accueil
-modified: 2025-08-07T22:35
+created: 2025-05-09T18:36
+modified: 2026-09-11T17:07
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -29,12 +30,12 @@ Vous pouvez me retrouver sur
 
 <!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" SORT file.frontmatter.updated DESC LIMIT 5 -->
 
-| Date            | Nom                                                                                                                         |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| 05 juin 2026    | [[Comment ce blog est publié]]                                                       |
-| 05 juin 2026    | [[Dur de trouver un éditeur Markdown]]                                       |
-| 31 juillet 2025 | [[Installer l'extension ssh2 pour PHP sous macOS]]         |
-| 17 juin 2025    | [[Afficher les requêtes exécutées par le serveur SQL]] |
-| 17 juin 2025    | [[Ne pas utiliser de champs FLOAT dans MySQL]]                 |
+| Date              | Nom                                                                                                                                                                           |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 11 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]] |
+| 11 septembre 2026 | [[Une virgule et trois robots d’Asimov]]                                                                                     |
+| 06 juin 2026      | [[Dur de trouver un éditeur Markdown]]                                                                                         |
+| 06 juin 2026      | [[Comment ce blog est publié]]                                                                                                         |
+| 31 juillet 2025   | [[Installer l'extension ssh2 pour PHP sous macOS]]                                                           |
 
 <!-- SerializedQuery END -->

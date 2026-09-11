@@ -1,5 +1,6 @@
 ---
 publish: true
+created: 2025-05-16T10:00
 modified: 2025-06-17T19:56
 tags:
   - SQL
