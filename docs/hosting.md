@@ -206,6 +206,26 @@ Using `docs.example.com` is an example of a subdomain. They're a simple way of c
 5. Press Deploy. Once it's live, you'll have a `*.netlify.app` URL to view the page.
 6. To add a custom domain, check "Domain management" in the left sidebar, just like with Vercel.
 
+## Sevalla
+
+1. Log in to the [Sevalla dashboard](https://app.sevalla.com/) and create a new **Static Site** application, connecting the Git repository containing your Quartz project.
+2. Under "Build command", enter `npx quartz plugin install && npx quartz build`.
+3. Under "Publish directory" (or "Deploy directory"), enter `public`.
+4. Deploy. Once it's live, you'll have a Sevalla-provided URL to view the page.
+5. To add a custom domain, use the domain settings on your Static Site application.
+
+### Fix URLs
+
+Since Quartz generates links that don't include the `.html` extension, you need to enable Sevalla's **Pretty URLs** feature so that requests like `/notes/my-note` resolve to the actual `notes/my-note.html` file on disk:
+
+1. Go to your Static Site application's **Settings → Redirects** tab.
+2. Enable the **Pretty URLs** toggle.
+
+Without this enabled, internal links (and any link crawler) will hit 404s, since Quartz emits `file.html` but never links to it with the extension.
+
+> [!tip]
+> For finer-grained control (custom redirects, splats, forced redirects), Sevalla also supports a Netlify-style `_redirects` file placed in the `public` output directory. See [Sevalla's redirects documentation](https://docs.sevalla.com/static-sites/redirects) for the full syntax.
+
 ## GitLab Pages
 
 In your local Quartz, create a new file `.gitlab-ci.yml`.
