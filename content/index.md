@@ -2,7 +2,7 @@
 publish: true
 title: Accueil
 created: 2025-05-09T18:36
-modified: 2026-09-11T17:07
+modified: 2026-09-14T23:18
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -30,12 +30,12 @@ Vous pouvez me retrouver sur
 
 <!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" SORT file.frontmatter.updated DESC LIMIT 5 -->
 
-| Date              | Nom                                                                                                                                                                           |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 11 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]] |
-| 11 septembre 2026 | [[Une virgule et trois robots d’Asimov]]                                                                                     |
-| 06 juin 2026      | [[Dur de trouver un éditeur Markdown]]                                                                                         |
-| 06 juin 2026      | [[Comment ce blog est publié]]                                                                                                         |
-| 31 juillet 2025   | [[Installer l'extension ssh2 pour PHP sous macOS]]                                                           |
+| Date              | Nom                                                                                                                                                                                                                                               |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 14 septembre 2026 | [[Corriger les URLs propres de Quartz sur Sevalla]]                                                                                                                             |
+| 14 septembre 2026 | [[ECS Exec en pratique - retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting]] |
+| 14 septembre 2026 | [[Configuration déclarée, état observé - vérifier un correctif de locale dans un container ECS réel]]                         |
+| 13 septembre 2026 | [[Une virgule et trois robots d’Asimov]]                                                                                                                                                         |
+| 11 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]]                                                                     |
 
 <!-- SerializedQuery END -->
