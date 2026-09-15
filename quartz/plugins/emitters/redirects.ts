@@ -4,12 +4,29 @@ import { QuartzEmitterPlugin } from "../types"
 import fs from "fs"
 
 /**
+ * Sevalla's _redirects parser requires both columns to be URL-encoded (see
+ * https://docs.sevalla.com/static-sites/redirects) and matches against the
+ * *encoded* request path as sent by the browser -- not the decoded one. Plain
+ * `encodeURIComponent` over-escapes: it also encodes characters like `,` and
+ * `'` that browsers themselves leave literal in a path (they're valid
+ * sub-delimiters there), which would make our rule's `from` never match a
+ * real request. `encodeURI` mirrors what a browser actually sends: it leaves
+ * `/`, `,`, `'`, `(`, `)` etc. alone and only escapes what's actually illegal
+ * in a URL (spaces, backticks, non-ASCII...).
+ */
+function encodePathForRedirects(slug: FullSlug): string {
+  return encodeURI(slug)
+}
+
+/**
  * One rule per line, first match wins. `from`/`to` never contain raw spaces
  * (slugs use `-` as a separator), so a single space is enough to delimit the
  * three columns even though both can contain other punctuation.
  */
 function redirectsFileContents(legacyRules: Array<[from: FullSlug, to: FullSlug]>): string {
-  const specificRules = legacyRules.map(([from, to]) => `/${from} /${to} 301`)
+  const specificRules = legacyRules.map(
+    ([from, to]) => `/${encodePathForRedirects(from)} /${encodePathForRedirects(to)} 301`,
+  )
   const catchAllRule = "/*  /:splat.html  200"
   return [...specificRules, catchAllRule].join("\n") + "\n"
 }
