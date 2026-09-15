@@ -326,6 +326,17 @@ export async function handleBuild(argv) {
     process.exit(1)
   }
 
+  // Re-apply the slug-cleanup patch (see scripts/patch-slugify.mjs) before
+  // any plugin code is loaded. This must run here rather than rely solely on
+  // `postinstall`/the `install-plugins` npm script: `npx quartz plugin
+  // install` (what the Dockerfile and CLAUDE.md's documented workflow both
+  // use) installs each plugin's own copy of @quartz-community/utils without
+  // going through those npm hooks. Importing it here, before the build
+  // bundle below is dynamically imported for the first time, guarantees the
+  // patch is on disk before any plugin module (crawl-links in particular)
+  // gets loaded into this process's module cache.
+  await import("../../scripts/patch-slugify.mjs")
+
   if (argv.serve) {
     argv.watch = true
   }
