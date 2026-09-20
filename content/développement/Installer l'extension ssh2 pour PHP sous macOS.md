@@ -8,6 +8,8 @@ tags:
   - ssh
 ---
 
+# Installer l'extension ssh2 pour PHP sous macOS
+
 Installer l'extension `ssh2` pour PHP sous macOS s'est avéré plus compliqué que prévu. Voici donc la démarche à suivre :
 
 > [!note]

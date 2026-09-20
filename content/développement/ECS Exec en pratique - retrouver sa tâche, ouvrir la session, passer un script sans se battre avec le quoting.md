@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-09-14T23:10:00
-modified: 2026-09-14T23:13
+modified: 2026-09-14T23:14
 tags:
   - aws
   - shell

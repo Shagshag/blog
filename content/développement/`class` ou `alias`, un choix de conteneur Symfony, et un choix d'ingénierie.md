@@ -1,14 +1,14 @@
 ---
 publish: true
 created: 2026-09-10T17:01:00
-modified: 2026-09-11T17:11
+modified: 2026-09-16T07:43
 tags:
   - symfony
   - testing
   - php
 ---
 
-# `class:` ou `alias:`, un choix de conteneur Symfony, et un choix d'ingénierie
+# `class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie
 
 _Pourquoi un fake S3 jetable peut être préférable à MinIO_
 

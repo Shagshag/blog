@@ -2,7 +2,7 @@
 publish: true
 title: Accueil
 created: 2025-05-09T18:36
-modified: 2026-09-14T23:18
+modified: 2026-09-20T17:25
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -32,10 +32,10 @@ Vous pouvez me retrouver sur
 
 | Date              | Nom                                                                                                                                                                                                                                               |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 16 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]]                                                                     |
+| 16 septembre 2026 | [[Configuration déclarée, état observé - vérifier un correctif de locale dans un container ECS réel]]                         |
 | 14 septembre 2026 | [[Corriger les URLs propres de Quartz sur Sevalla]]                                                                                                                             |
 | 14 septembre 2026 | [[ECS Exec en pratique - retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting]] |
-| 14 septembre 2026 | [[Configuration déclarée, état observé - vérifier un correctif de locale dans un container ECS réel]]                         |
-| 13 septembre 2026 | [[Une virgule et trois robots d’Asimov]]                                                                                                                                                         |
-| 11 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]]                                                                     |
+| 13 septembre 2026 | [[Easy corrige des virgules]]                                                                                                                                                                               |
 
 <!-- SerializedQuery END -->
