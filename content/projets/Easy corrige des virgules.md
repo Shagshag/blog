@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-09-11T17:02:00
-modified: 2026-09-13T09:53
+modified: 2026-09-20T17:35
 tags:
   - asimov
   - ia
@@ -66,7 +66,7 @@ Puis il demande :
 
 Ce n’est pas encore ce qui se passe dans la nouvelle, puisque c’est Ninheimer qui a demandé les modifications à Easy. Mais il imagine déjà le problème : si une machine fait tout le travail, que reste-t-il à l’auteur ? Essentiellement, lui donner des instructions.
 
-C'est' qu’on appelle, depuis quelques années, [_prompter_](https://fr.wiktionary.org/wiki/prompter).
+C'est qu’on appelle, depuis quelques années, [_prompter_](https://fr.wiktionary.org/wiki/prompter).
 
 Ninheimer se trompe de méthode mais Asimov ne lui donne pas tort.
 

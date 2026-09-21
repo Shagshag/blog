@@ -32,10 +32,10 @@ Vous pouvez me retrouver sur
 
 | Date              | Nom                                                                                                                                                                                                                                               |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 20 septembre 2026 | [[Easy corrige des virgules]]                                                                                                                                                                               |
 | 16 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]]                                                                     |
 | 16 septembre 2026 | [[Configuration déclarée, état observé - vérifier un correctif de locale dans un container ECS réel]]                         |
 | 14 septembre 2026 | [[Corriger les URLs propres de Quartz sur Sevalla]]                                                                                                                             |
 | 14 septembre 2026 | [[ECS Exec en pratique - retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting]] |
-| 13 septembre 2026 | [[Easy corrige des virgules]]                                                                                                                                                                               |
 
 <!-- SerializedQuery END -->
