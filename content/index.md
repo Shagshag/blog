@@ -2,7 +2,7 @@
 publish: true
 title: Accueil
 created: 2025-05-09T18:36
-modified: 2026-09-20T17:25
+modified: 2026-09-21T08:09
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -30,12 +30,12 @@ Vous pouvez me retrouver sur
 
 <!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" SORT file.frontmatter.updated DESC LIMIT 5 -->
 
-| Date              | Nom                                                                                                                                                                                                                                               |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 20 septembre 2026 | [[Easy corrige des virgules]]                                                                                                                                                                               |
-| 16 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]]                                                                     |
-| 16 septembre 2026 | [[Configuration déclarée, état observé - vérifier un correctif de locale dans un container ECS réel]]                         |
-| 14 septembre 2026 | [[Corriger les URLs propres de Quartz sur Sevalla]]                                                                                                                             |
-| 14 septembre 2026 | [[ECS Exec en pratique - retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting]] |
+| Date              | Nom                                                                                                                                                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 25 septembre 2026 | [[Qui répond de la machine - D'IBM aux Machines d'Asimov]]                                                                                             |
+| 20 septembre 2026 | [[Easy corrige des virgules]]                                                                                                                                                       |
+| 16 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]]                                             |
+| 16 septembre 2026 | [[Configuration déclarée, état observé - vérifier un correctif de locale dans un container ECS réel]] |
+| 14 septembre 2026 | [[Corriger les URLs propres de Quartz sur Sevalla]]                                                                                                     |
 
 <!-- SerializedQuery END -->
