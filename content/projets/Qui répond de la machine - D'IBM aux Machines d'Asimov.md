@@ -2,7 +2,7 @@
 publish: true
 title: Qui répond de la machine ? D'IBM aux Machines d'Asimov
 created: 2026-09-25T11:32:00
-modified: 2026-09-25T11:34
+modified: 2026-09-25T11:35
 tags:
   - asimov
   - ia
@@ -11,9 +11,11 @@ tags:
 
 # Qui répond de la machine ? D'IBM aux Machines d'Asimov
 
-Dans [[Easy corrige des virgules|l'article précédent]], Easy corrige des épreuves. Il ne décide de rien. C'est justement parce qu'il est discret et efficace qu'il est facile à accepter. Puis les Georges compliquent un peu les choses. Ils ne rendent pas les robots plus dangereux en leur donnant davantage de capacités, mais en changeant la manière dont ils interprètent ce qu'on leur demande. Le remède devient aussi un poison : le _pharmakon_.
+Dans [[Easy corrige des virgules|l'article précédent]], Easy corrige des épreuves. Il ne décide de rien.
 
-Ce qui m'intéresse ici, c'est un autre glissement : celui du rôle qu'on donne à la machine. Un outil, on le dirige : on garde la main sur où on va. Un guide, il sait mieux : c'est lui qui choisit la direction, et on la suit sans trop y réfléchir.
+Mais que se passe-t-il quand on ne demande plus seulement à une machine de faire quelque chose, mais de nous dire **quoi faire** ?
+
+C'est un changement assez discret. Un outil, on le dirige : on garde la main sur où on va. Un guide, lui, connaît la direction. On lui fait confiance, et on suit.
 
 Une phrase qui circule beaucoup en ce moment trace justement une limite assez nette entre les deux.
 
@@ -25,7 +27,7 @@ Cette phrase, on la trouve un peu partout depuis quelques années, y compris [su
 > — Manuel de formation IBM, 1979
 
 > [!info] Petite digression
-> Cette citation a tous les symptômes de la légende urbaine. Sa trace la plus ancienne qu'on puisse dater remonte à [2017](https://knowyourmeme.com/memes/a-computer-can-never-be-held-accountable), et le document original n'a jamais été retrouvé. Selon [le récit de Simon Willison](https://simonwillison.net/2025/Feb/3/a-computer-can-never-be-held-accountable/), Jonty Wareing, qui avait retrouvé le document dans les papiers de son père, a indiqué que l'exemplaire avait ensuite été détruit dans une inondation. Il avait également contacté les archives IBM, qui n'ont pas réussi à retrouver le document dans leurs collections. Comme par hasard.
+> Cette citation est peut-être une légende. Sa trace la plus ancienne qu'on puisse dater remonte à [2017](https://knowyourmeme.com/memes/a-computer-can-never-be-held-accountable), et le document original n'a jamais été retrouvé. Selon [le récit de Simon Willison](https://simonwillison.net/2025/Feb/3/a-computer-can-never-be-held-accountable/), Jonty Wareing, qui avait retrouvé le document dans les papiers de son père, a indiqué que l'exemplaire avait ensuite été détruit dans une inondation. Il avait également contacté les archives IBM, qui n'ont pas réussi à retrouver le document dans leurs collections. Comme par hasard.
 
 Le plus savoureux, c'est qu'IBM contredit elle-même la règle qu'elle met en avant. L'article s'ouvre sur « un ordinateur ne doit jamais prendre de décision stratégique », et se conclut ainsi :
 
