@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-09-14T23:10:00
-modified: 2026-09-14T23:14
+modified: 2026-09-16T07:42
 tags:
   - aws
   - shell
@@ -161,4 +161,4 @@ Faire tourner une commande dans un container de recette ou de prod fait peur, à
 - **ECS Exec**, fonctionnalité ECS reposant sur AWS Systems Manager Session Manager.
 - **`base64`**, pour transporter un script multi-lignes à travers plusieurs couches de shell sans souci de quoting.
 
-Pour un exemple concret d'utilisation (vérifier un correctif de locale PHP directement dans une tâche ECS Fargate réelle), voir [[Configuration déclarée, état observé - vérifier un correctif de locale dans un container ECS réel|cet article]].
+Pour un exemple concret d'utilisation (vérifier un correctif de locale PHP directement dans une tâche ECS Fargate réelle), voir [[Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`|cet article]].
