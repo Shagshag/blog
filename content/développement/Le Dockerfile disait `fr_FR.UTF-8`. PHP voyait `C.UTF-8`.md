@@ -2,7 +2,7 @@
 publish: true
 title: Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`
 created: 2026-09-14T23:10:00
-modified: 2026-09-25T16:32
+modified: 2026-09-27T00:59
 tags:
   - symfony
   - php
@@ -19,7 +19,7 @@ Ce billet raconte comment cet écart a été mis en évidence, puis comment un c
 
 ## Le bug
 
-Une fonction de normalisation de chaîne, utilisée pour dédupliquer des entrées avant un [`flush()` Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/3.6/reference/working-with-objects.html#persisting-entities), retirait les accents avec la méthode classique :
+Une fonction de normalisation de chaînes, utilisée pour dédupliquer des entrées avant un [`flush()` Doctrine](https://www.doctrine-project.org/projects/doctrine-orm/en/3.6/reference/working-with-objects.html#persisting-entities), retirait les accents avec la méthode classique :
 
 ```php
 iconv('UTF-8', 'ASCII//TRANSLIT', $string);
@@ -39,13 +39,11 @@ u($string)->ascii()->toString();
 
 [`u()->ascii()`](https://symfony.com/doc/current/string.html#methods-added-by-codepointstring-and-unicodestring) effectue la translittération au niveau du composant Symfony, sans dépendre de la locale `LC_CTYPE` de PHP pour ce traitement. Le composant expose aussi un [`AsciiSlugger`](https://symfony.com/doc/current/string.html#slugger) dédié à la génération de slugs (URLs, identifiants) ; ici, le besoin est une clé de déduplication, pas un slug, donc `u()->ascii()` seul suffit, sans les règles de casse et de séparateurs qu'ajouterait le slugger. Les règles de translittération ne sont cela dit pas garanties identiques à celles d'`iconv //TRANSLIT` : c'est une bibliothèque différente, avec ses propres tables Unicode.
 
-On aurait aussi pu initialiser la locale du processus avec `setlocale(LC_ALL, '')`. Ce n’est pas le choix retenu ici : la normalisation n’a pas besoin de dépendre de la locale du processus pour fonctionner correctement.
-
-Le correctif supprime donc cette dépendance plutôt que de la configurer ailleurs.
+On aurait aussi pu initialiser la locale du processus avec `setlocale(LC_ALL, '')`. Ce n'est pas le choix retenu ici : le correctif supprime la dépendance à `LC_CTYPE` plutôt que de la configurer ailleurs.
 
 ## « Il suffit de lire le Dockerfile, non ? »
 
-Avant de toucher à AWS : le repo a un [pipeline CI/CD](https://www.redhat.com/fr/topics/devops/what-cicd-pipeline) versionné ([`.github/workflows/ci.yml`](https://docs.github.com/en/actions/writing-workflows/about-workflows), [`.docker/Dockerfile`](https://docs.docker.com/reference/dockerfile/), une [task definition ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) `.aws/pro.json`). Est-ce qu'on ne peut pas simplement **lire** ces fichiers pour connaître la configuration du serveur, sans exécuter quoi que ce soit dessus ?
+Avant de toucher à AWS : le repo a un pipeline CI/CD versionné ([`.github/workflows/ci.yml`](https://docs.github.com/en/actions/writing-workflows/about-workflows), [`.docker/Dockerfile`](https://docs.docker.com/reference/dockerfile/), une [task definition ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) `.aws/pro.json`). Est-ce qu'on ne peut pas simplement **lire** ces fichiers pour connaître la configuration du serveur, sans exécuter quoi que ce soit dessus ?
 
 D'après l'analyse statique :
 
@@ -80,16 +78,15 @@ Session ECS Exec      LC_ALL=fr_FR.UTF-8
 PHP (LC_CTYPE)        C.UTF-8   ← rupture
 ```
 
-La variable d’environnement est correctement propagée à chaque étage. Mais PHP n’a pas initialisé sa locale `LC_CTYPE` à partir de cette variable.
+La variable d'environnement est correctement propagée à chaque étage. Mais PHP n'a pas initialisé sa locale `LC_CTYPE` à partir de cette variable.
 
-Ce n'est pas une anomalie de PHP, c'est le [comportement documenté de la bibliothèque C sous-jacente](https://sourceware.org/glibc/manual/latest/html_node/Setting-the-Locale.html) que PHP enveloppe : un programme démarre par défaut dans la locale POSIX `C` et ne synchronise pas automatiquement ses catégories de locale avec les variables d'environnement. [`setlocale(LC_ALL, '')`](https://www.php.net/setlocale) demande explicitement à PHP de les lire (la chaîne vide signifiant « prends la valeur dans l'environnement »).
+[PHP démarre avec les catégories de locale dans leur état initial](https://sourceware.org/glibc/manual/latest/html_node/Setting-the-Locale.html). Les variables `LANG`, `LC_ALL`, etc. présentes dans l'environnement ne signifient donc pas, à elles seules, que `LC_CTYPE` du processus PHP a été configuré avec ces valeurs. Un appel à [`setlocale(LC_ALL, '')`](https://www.php.net/setlocale) demande explicitement au processus de synchroniser sa locale avec l'environnement.
 
-La valeur observée ici, `C.UTF-8`, n'est d'ailleurs pas la locale `C` nue : c'est une variante UTF-8 de la locale POSIX, distincte à la fois de `C`, de `LANG`/`LC_ALL=fr_FR.UTF-8` déclarée dans le Dockerfile, et de la locale ICU utilisée séparément par `ext-intl`, non concernée ici, puisque `iconv()` ne passe pas par ICU.
+La valeur observée ici, `C.UTF-8`, n'est d'ailleurs pas la locale `C` nue : c'est une variante UTF-8 de la locale POSIX. Elle reste distincte de la locale [ICU](https://icu.unicode.org/) utilisée par `ext-intl`, qui résout sa propre locale par défaut indépendamment de `LC_CTYPE`. `iconv()`, lui, dépend directement de la locale du processus fixée par la libc.
 
-Un `grep -r setlocale` sur le code applicatif n'a trouvé que deux appels, tous les deux scopés à `LC_TIME` (formatage de dates), jamais `LC_CTYPE`, jamais de `setlocale(LC_ALL, '')` global.
-C'est donc bien une absence d'initialisation de `LC_CTYPE`, pas un override caché dans l'application.
+Un `grep -r setlocale` sur le code applicatif n'a trouvé que deux appels, tous les deux scopés à `LC_TIME` (formatage de dates), jamais `LC_CTYPE`, jamais de `setlocale(LC_ALL, '')` global. C'est donc bien une absence d'initialisation de `LC_CTYPE`, pas un override caché dans l'application.
 
-L’analyse statique permet donc de vérifier la configuration déclarée. Mais elle ne dit pas encore ce que PHP utilise réellement.
+L'analyse statique permet donc de vérifier la configuration déclarée. Mais elle ne dit pas encore ce que PHP utilise réellement.
 
 Pour ça, il faut regarder dans le container.
 
@@ -114,7 +111,10 @@ normalizeString("Matériel") forced under LC_CTYPE=C: materiel
 raw iconv("Matériel") under LC_CTYPE=C (old, pre-fix behaviour): 'Mat?riel'
 ```
 
-On voit que le vieux comportement à base d’`iconv` brut reproduit bien le bug sous `LC_CTYPE=C` et que `u()->ascii()` normalise correctement, avec ou sans locale forcée.
+> [!NOTE]
+> Le problème observé en recette est `C.UTF-8`. Pour reproduire le comportement défaillant de l'ancien `iconv`, le test force `LC_CTYPE=C`, qui constitue le cas le plus strict et permet de reproduire le défaut documenté.
+
+On voit que le vieux comportement à base d'`iconv` brut reproduit bien le bug sous `LC_CTYPE=C` et que `u()->ascii()` normalise correctement, avec ou sans locale forcée.
 
 Le code ne dépend plus de `LC_CTYPE`. Un changement de locale du process ne réintroduira pas ce bug.
 
@@ -122,7 +122,7 @@ Le code ne dépend plus de `LC_CTYPE`. Un changement de locale du process ne ré
 
 Le test dans le container permet de vérifier le correctif sur le déploiement réel. Il ne protège pas contre une régression future.
 
-Le projet n’a pas de tests fonctionnels avec kernel HTTP. Ce n’est pas un problème ici : forcer la locale ne nécessite ni base de données ni container, seulement `setlocale()`.
+Le projet n'a pas de tests fonctionnels avec kernel HTTP. Ce n'est pas un problème ici : forcer la locale ne nécessite ni base de données ni container, seulement `setlocale()`.
 
 ```php
 final class StringNormalizerTest extends TestCase
@@ -151,11 +151,11 @@ Le `finally` restaure la locale d'origine après le test, pour ne pas polluer le
 
 Faire tourner une commande dans un container de recette ou de prod demande quelques précautions.
 
-Dans ce cas précis,
+Dans ce cas précis :
 
-- le diagnostic était en lecture seule
-- le script tournait en CLI, dans un process isolé du pool de workers qui sert le trafic réel (Apache/mod\_php) : aucune requête en cours n'était affectée.
-- Il ne touchait ni au filesystem, ni à la base de données, ni à quoi que ce soit de partagé
+- le diagnostic était en lecture seule ;
+- le script tournait en CLI, dans un process isolé du pool de workers qui sert le trafic réel (Apache/mod\_php) : aucune requête en cours n'était affectée ;
+- il ne touchait ni au filesystem, ni à la base de données, ni à quoi que ce soit de partagé ;
 - `setlocale()` appelé dans ce process ponctuel n'a d'effet que sur ce process.
 
 Seule réserve : ECS Exec exécute avec les privilèges `root`, ce qui justifie de garder la technique au diagnostic ponctuel en lecture seule, pas à un usage régulier.
@@ -164,10 +164,10 @@ Cette conclusion vaut seulement si ECS Exec était déjà actif sur la tâche. L
 
 ## Conclusion
 
-Le sujet de fond n’était donc pas ECS Exec, mais l’écart entre une configuration déclarée et ce que l’application utilise réellement.
+Le sujet de fond n'était donc pas ECS Exec, mais l'écart entre une configuration déclarée et ce que l'application utilise réellement.
 
-Ici, la variable de locale était bien présente dans le container. PHP ne l’utilisait simplement pas pour `LC_CTYPE`.
+Ici, la variable de locale était bien présente dans le container. PHP ne l'utilisait simplement pas pour `LC_CTYPE`.
 
-Quelques commandes dans le container ont permis de le constater. Le test de non-régression permet maintenant de s’assurer que le code n’en dépend plus.
+Quelques commandes dans le container ont permis de le constater. Le test de non-régression permet maintenant de s'assurer que le code n'en dépend plus.
 
-La configuration dit ce qu’on veut. Le runtime dit ce qui se passe.
+La configuration dit ce qu'on veut. Le runtime dit ce qui se passe.
