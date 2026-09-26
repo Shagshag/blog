@@ -2,7 +2,7 @@
 publish: true
 title: Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`
 created: 2026-09-14T23:10:00
-modified: 2026-09-25T16:31
+modified: 2026-09-25T16:32
 tags:
   - symfony
   - php
@@ -13,7 +13,7 @@ tags:
 
 _Le Dockerfile décrit ce que le container devrait avoir. Il ne prouve pas ce que l'application utilise réellement._
 
-Un bug de locale a ceci de trompeur qu'on croit toujours connaître la configuration du serveur (après tout, c'est nous qui l'avons écrite, dans un Dockerfile versionné). Le piège n'est pas un manque de visibilité sur l'environnement. Il est dans l'écart entre ce qu'un container **déclare** et ce qu'un processus applicatif **consomme réellement** de cette déclaration.
+Un bug de locale a ceci de trompeur qu'on croit toujours connaître la configuration du serveur (après tout, c'est nous qui l'avons écrite, dans un Dockerfile versionné). Le problème est de confondre ce que le container **déclare** avec ce que le processus applicatif **utilise réellement**.
 
 Ce billet raconte comment cet écart a été mis en évidence, puis comment un correctif a été vérifié directement dans une tâche ECS Fargate qui tourne en recette, via [ECS Exec](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html), sans déploiement dédié ni environnement de staging séparé. La mécanique d'ECS Exec elle-même (retrouver sa tâche, prérequis IAM, quoting) est détaillée à part dans [[ECS Exec en pratique - retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting|un article dédié]]. Ici, l'accent est mis sur ce que le diagnostic a révélé.
 
@@ -27,7 +27,7 @@ iconv('UTF-8', 'ASCII//TRANSLIT', $string);
 
 `//TRANSLIT` fait partie des [extensions de comportement](https://man7.org/linux/man-pages/man3/iconv_open.3.html) proposées par les implémentations d'`iconv` (une extension GNU, absente de la norme POSIX). Sous Linux, le résultat dépend notamment de l'implémentation utilisée et de la locale `LC_CTYPE` du process qui l'exécute : un [rapport de bug glibc](https://www.mail-archive.com/debian-glibc@lists.debian.org/msg59606.html) documente précisément ce cas, le même appel `iconv -f utf-8 -t ascii//TRANSLIT` réussissant sous `en_US.utf8` et échouant sous `C.UTF-8`. Sous une locale `C` stricte, la translittération échoue silencieusement : `"Matériel"` devient `"Mat?riel"` au lieu de `"Materiel"`.
 
-Conséquence concrète : la clé de déduplication calculée côté PHP était censée correspondre à la collation `ci` de MySQL, insensible à la casse **et** aux accents. Sous locale `C`, ça ne marchait pas. Un doublon échappait donc à la déduplication applicative et finissait par percuter une contrainte d'unicité en base au moment du `flush()` (un crash en aval d'un problème de normalisation en amont).
+Donc la clé de déduplication calculée côté PHP était censée correspondre à la collation `ci` de MySQL, insensible à la casse **et** aux accents. Sous locale `C`, ça ne marchait pas. Un doublon échappait donc à la déduplication applicative et finissait par percuter une contrainte d'unicité en base au moment du `flush()` (un crash en aval d'un problème de normalisation en amont).
 
 Le correctif retenu remplace `iconv` par le composant String de Symfony :
 
@@ -41,11 +41,9 @@ u($string)->ascii()->toString();
 
 ## « Il suffit de lire le Dockerfile, non ? »
 
-Avant de toucher à AWS, la question s'est posée légitimement : le repo a un pipeline CI/CD versionné ([`.github/workflows/ci.yml`](https://docs.github.com/en/actions/writing-workflows/about-workflows), [`.docker/Dockerfile`](https://docs.docker.com/reference/dockerfile/), une [task definition ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) `.aws/pro.json`). Est-ce qu'on ne peut pas simplement **lire** ces fichiers pour connaître la configuration du serveur, sans exécuter quoi que ce soit dessus ?
+Avant de toucher à AWS : le repo a un [pipeline CI/CD](https://www.redhat.com/fr/topics/devops/what-cicd-pipeline) versionné ([`.github/workflows/ci.yml`](https://docs.github.com/en/actions/writing-workflows/about-workflows), [`.docker/Dockerfile`](https://docs.docker.com/reference/dockerfile/), une [task definition ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) `.aws/pro.json`). Est-ce qu'on ne peut pas simplement **lire** ces fichiers pour connaître la configuration du serveur, sans exécuter quoi que ce soit dessus ?
 
-On peut effectivement connaître la configuration OS/image de cette façon, mais ça ne dit pas ce que PHP voit à l'exécution.
-
-**Ce que l'analyse statique révèle**, sans le moindre accès AWS :
+D'après l'analyse statique :
 
 - `.github/workflows/ci.yml` : le déclencheur `on: push: branches: ["main"]` déploie sur le service ECS `pro` (prod), la branche `develop` déploie sur `pro-rct` (recette). **Même Dockerfile, même image** : seul le service ECS cible change.
 - `.docker/Dockerfile` fixe une locale française complète dans une instruction `ENV` :
@@ -78,7 +76,7 @@ Session ECS Exec      LC_ALL=fr_FR.UTF-8
 PHP (LC_CTYPE)        C.UTF-8   ← rupture
 ```
 
-La variable d'environnement est correctement propagée à chaque étage (Dockerfile, process d'entrée du container, session ECS Exec elle-même) jusqu'à PHP, qui n'en tient pas compte.
+La variable d’environnement est correctement propagée à chaque étage. Mais PHP n’a pas initialisé sa locale `LC_CTYPE` à partir de cette variable.
 
 Ce n'est pas une anomalie de PHP, c'est le [comportement documenté de la bibliothèque C sous-jacente](https://sourceware.org/glibc/manual/latest/html_node/Setting-the-Locale.html) que PHP enveloppe : un programme démarre par défaut dans la locale POSIX `C` et ne synchronise pas automatiquement ses catégories de locale avec les variables d'environnement. [`setlocale(LC_ALL, '')`](https://www.php.net/setlocale) demande explicitement à PHP de les lire (la chaîne vide signifiant « prends la valeur dans l'environnement »).
 
@@ -86,7 +84,9 @@ La valeur observée ici, `C.UTF-8`, n'est d'ailleurs pas la locale `C` nue : c'e
 
 Un `grep -r setlocale` sur le code applicatif n'a trouvé que deux appels, tous les deux scopés à `LC_TIME` (formatage de dates), jamais `LC_CTYPE`, jamais de `setlocale(LC_ALL, '')` global.
 
-L'analyse statique (CI/CD, Dockerfile, task definition) est donc la première étape — mais elle ne dit rien du comportement réel du processus applicatif. Ça, seule l'introspection depuis l'intérieur du container le montre.
+L’analyse statique permet donc de vérifier la configuration déclarée. Mais elle ne dit pas encore ce que PHP utilise réellement.
+
+Pour ça, il faut regarder dans le container.
 
 ## Vérifier le correctif dans le container réel
 
@@ -109,15 +109,15 @@ normalizeString("Matériel") forced under LC_CTYPE=C: materiel
 raw iconv("Matériel") under LC_CTYPE=C (old, pre-fix behaviour): 'Mat?riel'
 ```
 
-`u()->ascii()` normalise correctement, avec ou sans locale forcée. Le vieux comportement à base d'`iconv` brut, lui, reproduit bien le bug sous `LC_CTYPE=C` (la preuve que le problème était réel, pas seulement théorique, sur ce même environnement).
+On voit que le vieux comportement à base d’`iconv` brut reproduit bien le bug sous `LC_CTYPE=C` et que `u()->ascii()` normalise correctement, avec ou sans locale forcée.
 
-Et la locale par défaut réellement vue par PHP (`C.UTF-8`), découplée de la variable déclarée dans le Dockerfile (`fr_FR.UTF-8`), n'est pas un cas isolé : le jour où un process (cron, worker, ou ce même container après un changement d'image de base) tourne sous une locale encore plus stricte, le code ne dépend plus de la locale du processus.
+Le code ne dépend plus de `LC_CTYPE`. Un changement de locale du process ne réintroduira pas ce bug.
 
 ## Verrouiller le correctif : un test de non-régression
 
-Le diagnostic dans le container confirme le correctif à un instant donné, sur ce déploiement précis. Il ne protège pas d'une régression future, par exemple un retour accidentel à `iconv`, ou un nouveau traitement de chaîne qui réintroduirait la même dépendance implicite à `LC_CTYPE`.
+Le test dans le container permet de vérifier le correctif sur le déploiement réel. Il ne protège pas contre une régression future.
 
-L'absence de harnais fonctionnel dans le repo (uniquement des `TestCase` PHPUnit purs, sans kernel HTTP) n'est pas un obstacle ici : forcer la locale ne nécessite ni base de données ni container, seulement `setlocale()`, exactement comme lors du diagnostic sur la tâche réelle.
+Le projet n’a pas de tests fonctionnels avec kernel HTTP. Ce n’est pas un problème ici : forcer la locale ne nécessite ni base de données ni container, seulement `setlocale()`.
 
 ```php
 final class StringNormalizerTest extends TestCase
@@ -144,14 +144,25 @@ Le `finally` restaure la locale d'origine après le test, pour ne pas polluer le
 
 ## Pourquoi c'est sûr
 
-Faire tourner une commande dans un container de recette ou de prod fait peur, à raison. Ici, le script tournait en CLI, dans un process isolé du pool de workers qui sert le trafic réel (Apache/mod\_php) : aucune requête en cours n'était affectée. Il ne touchait ni au filesystem, ni à la base de données, ni à quoi que ce soit de partagé — `setlocale()` appelé dans ce process ponctuel n'a d'effet que sur ce process. Seule réserve : ECS Exec exécute avec les privilèges `root`, ce qui justifie de garder la technique au diagnostic ponctuel en lecture seule, pas à un usage régulier.
+Faire tourner une commande dans un container de recette ou de prod demande quelques précautions.
 
-Cette conclusion vaut seulement si ECS Exec était déjà actif sur la tâche. L'activer, si ce n'est pas le cas, force un redéploiement complet du service — une étape à part, à traiter avec prudence, pas dans l'urgence d'un diagnostic.
+Dans ce cas précis,
+
+- le diagnostic était en lecture seule
+- le script tournait en CLI, dans un process isolé du pool de workers qui sert le trafic réel (Apache/mod\_php) : aucune requête en cours n'était affectée.
+- Il ne touchait ni au filesystem, ni à la base de données, ni à quoi que ce soit de partagé
+- `setlocale()` appelé dans ce process ponctuel n'a d'effet que sur ce process.
+
+Seule réserve : ECS Exec exécute avec les privilèges `root`, ce qui justifie de garder la technique au diagnostic ponctuel en lecture seule, pas à un usage régulier.
+
+Cette conclusion vaut seulement si ECS Exec était déjà actif sur la tâche. L'activer, si ce n'est pas le cas, force un redéploiement complet du service. Ce qui peut avoir des conséquences que ne justifie pas ce diagnostic.
 
 ## Conclusion
 
-Le sujet de fond n'était pas ECS Exec, mais l'écart entre une configuration déclarée au niveau du conteneur et l'état réellement consommé par l'application. Ici, une variable d'environnement de locale, présente et correcte à chaque étage, mais ignorée par PHP faute d'un `setlocale(LC_ALL, '')` dans le code.
+Le sujet de fond n’était donc pas ECS Exec, mais l’écart entre une configuration déclarée et ce que l’application utilise réellement.
 
-L'analyse statique du pipeline reste la première étape. Elle donne la configuration déclarée, pas le comportement observé. Entre les deux, il n'y a que l'introspection depuis l'intérieur du runtime pour trancher — ici une locale PHP, ailleurs un fuseau horaire, un encodage par défaut, une variable que l'application ne lit tout simplement jamais.
+Ici, la variable de locale était bien présente dans le container. PHP ne l’utilisait simplement pas pour `LC_CTYPE`.
 
-Ce diagnostic valide ce déploiement, ce process CLI, à cet instant précis. Pas les workers en cours, pas les autres tâches, pas les prochains déploiements — juste la preuve que, sur cet environnement-là, le correctif tient.
+Quelques commandes dans le container ont permis de le constater. Le test de non-régression permet maintenant de s’assurer que le code n’en dépend plus.
+
+La configuration dit ce qu’on veut. Le runtime dit ce qui se passe.
