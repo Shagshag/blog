@@ -39,6 +39,10 @@ u($string)->ascii()->toString();
 
 [`u()->ascii()`](https://symfony.com/doc/current/string.html#methods-added-by-codepointstring-and-unicodestring) effectue la translittération au niveau du composant Symfony, sans dépendre de la locale `LC_CTYPE` de PHP pour ce traitement. Le composant expose aussi un [`AsciiSlugger`](https://symfony.com/doc/current/string.html#slugger) dédié à la génération de slugs (URLs, identifiants) ; ici, le besoin est une clé de déduplication, pas un slug, donc `u()->ascii()` seul suffit, sans les règles de casse et de séparateurs qu'ajouterait le slugger. Les règles de translittération ne sont cela dit pas garanties identiques à celles d'`iconv //TRANSLIT` : c'est une bibliothèque différente, avec ses propres tables Unicode.
 
+On aurait aussi pu initialiser la locale du processus avec `setlocale(LC_ALL, '')`. Ce n’est pas le choix retenu ici : la normalisation n’a pas besoin de dépendre de la locale du processus pour fonctionner correctement.
+
+Le correctif supprime donc cette dépendance plutôt que de la configurer ailleurs.
+
 ## « Il suffit de lire le Dockerfile, non ? »
 
 Avant de toucher à AWS : le repo a un [pipeline CI/CD](https://www.redhat.com/fr/topics/devops/what-cicd-pipeline) versionné ([`.github/workflows/ci.yml`](https://docs.github.com/en/actions/writing-workflows/about-workflows), [`.docker/Dockerfile`](https://docs.docker.com/reference/dockerfile/), une [task definition ECS](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) `.aws/pro.json`). Est-ce qu'on ne peut pas simplement **lire** ces fichiers pour connaître la configuration du serveur, sans exécuter quoi que ce soit dessus ?
@@ -80,9 +84,10 @@ La variable d’environnement est correctement propagée à chaque étage. Mais 
 
 Ce n'est pas une anomalie de PHP, c'est le [comportement documenté de la bibliothèque C sous-jacente](https://sourceware.org/glibc/manual/latest/html_node/Setting-the-Locale.html) que PHP enveloppe : un programme démarre par défaut dans la locale POSIX `C` et ne synchronise pas automatiquement ses catégories de locale avec les variables d'environnement. [`setlocale(LC_ALL, '')`](https://www.php.net/setlocale) demande explicitement à PHP de les lire (la chaîne vide signifiant « prends la valeur dans l'environnement »).
 
-La valeur observée ici, `C.UTF-8`, n'est d'ailleurs pas la locale `C` nue : c'est une variante UTF-8 de la locale POSIX, distincte à la fois de `C`, de `LANG`/`LC_ALL=fr_FR.UTF-8` déclarée dans le Dockerfile, et de la locale ICU utilisée séparément par `ext-intl` — non concernée ici, puisque `iconv()` ne passe pas par ICU.
+La valeur observée ici, `C.UTF-8`, n'est d'ailleurs pas la locale `C` nue : c'est une variante UTF-8 de la locale POSIX, distincte à la fois de `C`, de `LANG`/`LC_ALL=fr_FR.UTF-8` déclarée dans le Dockerfile, et de la locale ICU utilisée séparément par `ext-intl`, non concernée ici, puisque `iconv()` ne passe pas par ICU.
 
 Un `grep -r setlocale` sur le code applicatif n'a trouvé que deux appels, tous les deux scopés à `LC_TIME` (formatage de dates), jamais `LC_CTYPE`, jamais de `setlocale(LC_ALL, '')` global.
+C'est donc bien une absence d'initialisation de `LC_CTYPE`, pas un override caché dans l'application.
 
 L’analyse statique permet donc de vérifier la configuration déclarée. Mais elle ne dit pas encore ce que PHP utilise réellement.
 
@@ -140,7 +145,7 @@ final class StringNormalizerTest extends TestCase
 }
 ```
 
-Le `finally` restaure la locale d'origine après le test, pour ne pas polluer le reste de la suite. Ce test aurait détecté le bug avant sa mise en production — il reproduit exactement la condition qui provoquait le bug : `LC_CTYPE=C`.
+Le `finally` restaure la locale d'origine après le test, pour ne pas polluer le reste de la suite. Ce test aurait détecté le bug avant sa mise en production car il reproduit la condition qui provoquait le bug : `LC_CTYPE=C`.
 
 ## Pourquoi c'est sûr
 
