@@ -3,7 +3,6 @@ publish: true
 created: 2025-05-01T15:10
 modified: 2025-05-10T08:26
 tags:
-  - netinstall
   - php
   - wordpress
 ---

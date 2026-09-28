@@ -2,16 +2,20 @@
 publish: true
 title: Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`
 created: 2026-09-14T23:10:00
-modified: 2026-09-27T00:59
+modified: 2026-09-28T11:45
 tags:
   - symfony
   - php
   - aws
+  - docker
+  - retour-d-experience
 ---
 
 # Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`.
 
 _Le Dockerfile décrit ce que le container devrait avoir. Il ne prouve pas ce que l'application utilise réellement._
+
+_Also available in [[The Dockerfile said `fr_FR.UTF-8`. PHP saw `C.UTF-8`|English]]._
 
 Un bug de locale a ceci de trompeur qu'on croit toujours connaître la configuration du serveur (après tout, c'est nous qui l'avons écrite, dans un Dockerfile versionné). Le problème est de confondre ce que le container **déclare** avec ce que le processus applicatif **utilise réellement**.
 

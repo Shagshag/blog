@@ -6,6 +6,7 @@ tags:
   - symfony
   - testing
   - php
+  - retour-d-experience
 ---
 
 # `class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie

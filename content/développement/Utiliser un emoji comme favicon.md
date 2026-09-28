@@ -3,9 +3,8 @@ publish: true
 created: 2025-05-11T16:00
 modified: 2025-05-12T08:35
 tags:
-  - Quartz
-  - favicon
-  - TypeScript
+  - quartz
+  - typescript
 ---
 
 Maintenant que [_quelques_ navigateurs supportent le SVG](https://caniuse.com/link-icon-svg) pour les [favicons](https://fr.wikipedia.org/wiki/Favicon), on peut utiliser les emoji directement avec cette balise :

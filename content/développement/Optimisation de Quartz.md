@@ -3,7 +3,7 @@ publish: true
 created: 2025-05-11T18:56
 modified: 2025-05-11T22:29
 tags:
-  - Quartz
+  - quartz
 ---
 
 J'utilise [Quartz](https://quartz.jzhao.xyz/) pour générer ce site. A partir de fichiers [Markdown](https://fr.wikipedia.org/wiki/Markdown), il génère un [site statique](https://fr.wikipedia.org/wiki/Page_web_statique).

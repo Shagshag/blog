@@ -3,9 +3,8 @@ publish: true
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:08
 tags:
-  - bootstrap
   - css
-  - less
+  - bootstrap
 ---
 
 J’ai eu a créer une page avec Bootstrap dans un site n’utilisant pas Bootstrap

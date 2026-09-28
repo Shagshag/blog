@@ -3,9 +3,7 @@ publish: true
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:07
 tags:
-  - calculatrice
   - shell
-  - ubuntu
 ---
 
 Je dois faire plein de calculs à coller dans un css, c’est très gênant d’avoir à corriger tous les résultats pour remplacer les virgules par des points.

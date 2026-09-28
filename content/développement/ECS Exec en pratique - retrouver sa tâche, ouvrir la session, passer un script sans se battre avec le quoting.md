@@ -1,10 +1,11 @@
 ---
 publish: true
 created: 2026-09-14T23:10:00
-modified: 2026-09-16T07:42
+modified: 2026-09-25T16:33
 tags:
   - aws
   - shell
+  - retour-d-experience
 ---
 
 # ECS Exec en pratique : retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting

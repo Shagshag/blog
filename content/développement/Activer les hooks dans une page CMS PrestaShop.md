@@ -4,7 +4,6 @@ created: 2025-05-01T15:10
 modified: 2025-05-10T10:01
 tags:
   - prestashop
-  - smarty
 ---
 
 Normalement le contenu des [pages CMS est statique dans PrestaShop](http://doc.prestashop.com/pages/viewpage.action?pageId=20840877) mais il peut être utile d’y afficher un module pour mettre les dernières réductions, un formulaire d’inscription ou n’importe quoi.

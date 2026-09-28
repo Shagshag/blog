@@ -1,11 +1,10 @@
 ---
 publish: true
 created: 2025-07-31T09:41
-modified: 2025-07-31T10:22
+modified: 2026-09-16T07:43
 tags:
   - php
-  - macos
-  - ssh
+  - shell
 ---
 
 # Installer l'extension ssh2 pour PHP sous macOS
