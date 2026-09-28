@@ -89,6 +89,7 @@ Un `grep -r setlocale` sur le code applicatif n'a trouvé que deux appels, tous 
 L'analyse statique permet donc de vérifier la configuration déclarée. Mais elle ne dit pas encore ce que PHP utilise réellement.
 
 Pour ça, il faut regarder dans le container.
+Un container local aurait permis de reproduire le comportement, à condition de reconstruire exactement la même image et le même environnement. Mais le bug concernait la recette : je voulais d'abord vérifier ce que faisait réellement le PHP déjà déployé.
 
 ## Vérifier le correctif dans le container réel
 
