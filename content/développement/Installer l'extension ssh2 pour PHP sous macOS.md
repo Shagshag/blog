@@ -1,13 +1,12 @@
 ---
 publish: true
+title: Installer l'extension ssh2 pour PHP sous macOS
 created: 2025-07-31T09:41
-modified: 2026-09-16T07:43
+modified: 2026-10-04T17:00
 tags:
   - php
   - shell
 ---
-
-# Installer l'extension ssh2 pour PHP sous macOS
 
 Installer l'extension `ssh2` pour PHP sous macOS s'est avéré plus compliqué que prévu. Voici donc la démarche à suivre :
 

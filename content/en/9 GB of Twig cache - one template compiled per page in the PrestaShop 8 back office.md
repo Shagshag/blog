@@ -3,14 +3,12 @@ publish: true
 title: "9 GB of Twig cache: one template compiled per page in the PrestaShop 8 back office"
 lang: en
 created: 2026-10-04T00:00:00
-modified: 2026-10-04T02:45
+modified: 2026-10-04T16:59
 tags:
   - symfony
   - prestashop
   - php
 ---
-
-# 9 GB of Twig cache: one template compiled per page in the PrestaShop 8 back office
 
 _`template_from_string()`, more than 80,000 files, and a folder that nothing purges_
 

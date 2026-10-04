@@ -1,14 +1,13 @@
 ---
 publish: true
+title: "ECS Exec en pratique : retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting"
 created: 2026-09-14T23:10:00
-modified: 2026-09-25T16:33
+modified: 2026-10-04T16:59
 tags:
   - aws
   - shell
   - retour-d-experience
 ---
-
-# ECS Exec en pratique : retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting
 
 _Un guide de référence, indépendant du langage exécuté dans le container_
 

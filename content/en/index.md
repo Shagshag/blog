@@ -3,7 +3,7 @@ publish: true
 title: Home
 lang: en
 created: 2026-09-28T00:00:00
-modified: 2026-09-28T11:57
+modified: 2026-10-04T02:47
 ---
 
 Hello and welcome to my site.
@@ -33,8 +33,8 @@ You can find me on
 
 | Date       | Name                                                                                                                                                                                   |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2026-10-04 | [[9 GB of Twig cache - one template compiled per page in the PrestaShop 8 back office]]     |
+| 2026-10-04 | [[The Dockerfile said `fr_FR.UTF-8`. PHP saw `C.UTF-8`]]                                                                   |
 | 2026-10-04 | [[14 minutes of cache-warmup on EFS - when a PrestaShop back office becomes unreachable]] |
-| 2026-09-28 | [[The Dockerfile said `fr_FR.UTF-8`. PHP saw `C.UTF-8`]]                                                                   |
+| 2026-10-04 | [[9 GB of Twig cache - one template compiled per page in the PrestaShop 8 back office]]     |
 
 <!-- SerializedQuery END -->

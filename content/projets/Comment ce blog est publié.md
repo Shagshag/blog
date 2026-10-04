@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-06-05T00:00:00
-modified: 2026-10-04T00:00
+modified: 2026-10-04T13:12
 tags:
   - obsidian
   - blog
@@ -62,7 +62,17 @@ plugins:
     enabled: true
     options:
       emoji: "🐢"
+  - source: github:Shagshag/redirects-file
+    enabled: true
+    options:
+      aliases: true
 ```
+
+J'en ai ajouté d'autres depuis, toujours sans modifier le moteur. Le déclencheur : un titre d'article comme « `class` ou `alias`, un choix de conteneur Symfony… » s'affichait avec ses backticks dans le titre, le fil d'Ariane, l'explorateur, la recherche, les backlinks et les liens, alors que le titre dans le corps de l'article était bien formaté. Je devais donc le répéter trois fois.
+
+- [redirects-file](https://github.com/Shagshag/redirects-file) : génère le fichier `_redirects` de Sevalla. Il contient la règle `/* /:splat.html 200` pour les URLs propres, des redirections 301 explicites pour les anciennes URLs, et une option `aliases` qui transforme les `aliases` du frontmatter en vrais 301 côté serveur. Il remplace du code que j'avais ajouté dans le moteur, voir [[Corriger les URLs propres de Quartz sur Sevalla]].
+- [quartz-markdown-article-title](https://github.com/Shagshag/quartz-markdown-article-title) et [quartz-markdown-breadcrumbs](https://github.com/Shagshag/quartz-markdown-breadcrumbs) : affichent le Markdown inline du titre (code, gras, italique) dans le h1 et le fil d'Ariane, au lieu des backticks bruts. Ils remplacent les plugins `article-title` et `breadcrumbs`, désactivés dans la config.
+- [quartz-markdown-titles](https://github.com/Shagshag/quartz-markdown-titles) : même correction pour l'explorateur, la recherche et les backlinks (un petit script côté navigateur, qui garde le surlignage de la recherche), et pour le texte des liens dans les articles, par exemple un alias de wikilink contenant des backticks (corrigé au build).
 
 Petit point technique : ces plugins n'ont pas d'étape de compilation. Leur `dist/index.js` est écrit à la main et versionné dans leur dépôt.
 

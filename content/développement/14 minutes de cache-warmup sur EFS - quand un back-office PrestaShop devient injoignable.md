@@ -2,7 +2,7 @@
 publish: true
 title: "14 minutes de `cache:warmup` sur EFS : quand un back-office PrestaShop devient injoignable"
 created: 2026-10-02T00:00:00
-modified: 2026-10-04T01:44
+modified: 2026-10-04T16:59
 tags:
   - symfony
   - prestashop
@@ -10,8 +10,6 @@ tags:
   - aws
   - retour-d-experience
 ---
-
-# 14 minutes de `cache:warmup` sur EFS : quand un back-office PrestaShop devient injoignable
 
 _Un `git pull` banal, une correction qui aggrave tout, et une admin qui ne répond plus_
 

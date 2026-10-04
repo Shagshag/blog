@@ -2,7 +2,7 @@
 publish: true
 title: Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`
 created: 2026-09-14T23:10:00
-modified: 2026-09-28T11:45
+modified: 2026-10-04T16:59
 tags:
   - symfony
   - php
@@ -10,8 +10,6 @@ tags:
   - docker
   - retour-d-experience
 ---
-
-# Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`.
 
 _Le Dockerfile décrit ce que le container devrait avoir. Il ne prouve pas ce que l'application utilise réellement._
 

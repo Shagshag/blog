@@ -2,15 +2,14 @@
 publish: true
 aliases:
   - projets/easy-corrige-des-virgules
+title: Easy corrige des virgules
 created: 2026-09-11T17:02:00
-modified: 2026-09-28T12:21
+modified: 2026-10-04T17:00
 tags:
   - asimov
   - ia
   - culture
 ---
-
-# Easy corrige des virgules
 
 Il y a quelques jours, j’ai fait relire un texte à Claude.
 

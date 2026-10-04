@@ -4,14 +4,12 @@ aliases:
   - projets/qui-repond-de-la-machine-d-ibm-aux-machines-d-asimov
 title: Qui répond de la machine ? D'IBM aux Machines d'Asimov
 created: 2026-09-25T11:32:00
-modified: 2026-09-28T12:21
+modified: 2026-09-28T12:31
 tags:
   - asimov
   - ia
   - culture
 ---
-
-# Qui répond de la machine ? D'IBM aux Machines d'Asimov
 
 Dans [[Easy corrige des virgules|l'article précédent]], Easy corrige des épreuves. Il ne décide de rien.
 
