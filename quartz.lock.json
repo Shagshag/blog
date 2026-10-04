@@ -217,6 +217,12 @@
       "commit": "d7f835992a7e9f12f644475293e0f56eea19ff32",
       "installedAt": "2026-10-04T14:36:13.562Z"
     },
+    "quartz-markdown-titles": {
+      "source": "github:Shagshag/quartz-markdown-titles",
+      "resolved": "https://github.com/Shagshag/quartz-markdown-titles.git",
+      "commit": "25f9d930c031804e42a47b054ac0518c929ada4a",
+      "installedAt": "2026-10-04T14:43:39.227Z"
+    },
     "quartz-themes": {
       "source": {
         "name": "quartz-themes",

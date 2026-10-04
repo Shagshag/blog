@@ -302,6 +302,8 @@ plugins:
     enabled: true
     options:
       emoji: 🐢
+  - source: github:Shagshag/quartz-markdown-titles
+    enabled: true
   - source: github:quartz-community/darkmode
     enabled: true
     layout:
