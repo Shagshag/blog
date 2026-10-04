@@ -228,6 +228,12 @@
       "commit": "28229202d481d5a41dc38e57ce320c561d20d0e8",
       "installedAt": "2026-10-04T07:16:13.811Z"
     },
+    "redirects-file": {
+      "source": "github:Shagshag/redirects-file",
+      "resolved": "https://github.com/Shagshag/redirects-file.git",
+      "commit": "9e8db9c89ffb3f22334fc0a9c317b56dc9f7e9a9",
+      "installedAt": "2026-10-04T14:23:37.828Z"
+    },
     "remove-draft": {
       "source": "github:quartz-community/remove-draft",
       "resolved": "https://github.com/quartz-community/remove-draft.git",
