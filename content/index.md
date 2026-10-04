@@ -2,7 +2,7 @@
 publish: true
 title: Accueil
 created: 2025-05-09T18:36
-modified: 2026-09-28T11:56
+modified: 2026-10-04T02:43
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -30,12 +30,12 @@ Vous pouvez me retrouver sur
 
 <!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, file.link AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.updated DESC LIMIT 5 -->
 
-| Date              | Nom                                                                                                                                                                                                                                               |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 27 septembre 2026 | [[Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`]]                                                                                                           |
-| 25 septembre 2026 | [[Qui répond de la machine - D'IBM aux Machines d'Asimov]]                                                                                                                     |
-| 20 septembre 2026 | [[Easy corrige des virgules]]                                                                                                                                                                               |
-| 16 septembre 2026 | [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]]                                                                     |
-| 16 septembre 2026 | [[ECS Exec en pratique - retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting]] |
+| Date              | Nom                                                                                                                                                                                                     |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 04 octobre 2026   | [[9 Go de cache Twig - un template compilé par page dans le back-office PrestaShop 8]]             |
+| 04 octobre 2026   | [[14 minutes de cache-warmup sur EFS - quand un back-office PrestaShop devient injoignable]] |
+| 28 septembre 2026 | [[Qui répond de la machine - D'IBM aux Machines d'Asimov]]                                                                           |
+| 28 septembre 2026 | [[Easy corrige des virgules]]                                                                                                                                     |
+| 28 septembre 2026 | [[La célébrité]]                                                                                                                                                               |
 
 <!-- SerializedQuery END -->
