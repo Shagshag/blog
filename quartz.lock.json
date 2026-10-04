@@ -193,6 +193,18 @@
       "commit": "92d3872097d793b29b88b0e94cb46be67357c503",
       "installedAt": "2026-10-04T07:16:12.731Z"
     },
+    "quartz-emoji-favicon": {
+      "source": "github:Shagshag/quartz-emoji-favicon",
+      "resolved": "https://github.com/Shagshag/quartz-emoji-favicon.git",
+      "commit": "7382c27892d011478390d48794d0050f7850e45c",
+      "installedAt": "2026-10-04T11:08:06.264Z"
+    },
+    "quartz-html-page-title": {
+      "source": "github:Shagshag/quartz-html-page-title",
+      "resolved": "https://github.com/Shagshag/quartz-html-page-title.git",
+      "commit": "2993df8296f7de2306628dc0927f0f38c2a51993",
+      "installedAt": "2026-10-04T11:08:06.202Z"
+    },
     "quartz-themes": {
       "source": {
         "name": "quartz-themes",

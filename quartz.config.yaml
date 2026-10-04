@@ -181,10 +181,18 @@ plugins:
       position: beforeBody
       priority: 30
   - source: github:quartz-community/page-title
+    enabled: false
+  - source: github:Shagshag/quartz-html-page-title
     enabled: true
+    options:
+      html: 🐢<span class="desktop-only"> Shagshag</span>
     layout:
       position: left
       priority: 10
+  - source: github:Shagshag/quartz-emoji-favicon
+    enabled: true
+    options:
+      emoji: 🐢
   - source: github:quartz-community/darkmode
     enabled: true
     layout:
