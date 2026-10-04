@@ -205,6 +205,18 @@
       "commit": "2993df8296f7de2306628dc0927f0f38c2a51993",
       "installedAt": "2026-10-04T11:08:06.202Z"
     },
+    "quartz-markdown-article-title": {
+      "source": "github:Shagshag/quartz-markdown-article-title",
+      "resolved": "https://github.com/Shagshag/quartz-markdown-article-title.git",
+      "commit": "4e9d8eee37480fb100ed0395ecd22a3553d2b12c",
+      "installedAt": "2026-10-04T14:36:12.668Z"
+    },
+    "quartz-markdown-breadcrumbs": {
+      "source": "github:Shagshag/quartz-markdown-breadcrumbs",
+      "resolved": "https://github.com/Shagshag/quartz-markdown-breadcrumbs.git",
+      "commit": "d7f835992a7e9f12f644475293e0f56eea19ff32",
+      "installedAt": "2026-10-04T14:36:13.562Z"
+    },
     "quartz-themes": {
       "source": {
         "name": "quartz-themes",
