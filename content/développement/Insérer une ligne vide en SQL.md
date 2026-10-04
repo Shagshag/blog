@@ -3,7 +3,7 @@ publish: true
 created: 2025-06-17T15:03
 modified: 2025-06-17T19:53
 tags:
-  - SQL
+  - sql
 ---
 
 Rien de surprenant mais c'est la première fois que j'ai à insérer une ligne sans aucune donnée dans une table.

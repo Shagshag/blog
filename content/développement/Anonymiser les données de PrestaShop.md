@@ -3,10 +3,8 @@ publish: true
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:01
 tags:
-  - anonymisation
-  - développement
   - prestashop
-  - SQL
+  - sql
 ---
 
 Pour créer un environnement de développement, on duplique celui de production. Sauf qu’il ne faut pas garder les infos personnelles des clients. Déjà c’est dangereux, si vous gérez mal votre affaire vous risquez d’envoyer des mails aux clients et ça force tous les développeurs et intervenants à faire attention au RGPD.

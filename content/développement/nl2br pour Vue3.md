@@ -4,7 +4,7 @@ created: 2025-05-01T15:10
 modified: 2025-05-10T10:08
 tags:
   - javascript
-  - vue3
+  - vue
 ---
 
 J’ai voulu utiliser [nl2br pour vue.js](https://github.com/inouetakuya/vue-nl2br/) mais il n’est pas compatible avec Vue3.

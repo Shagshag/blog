@@ -3,10 +3,6 @@ publish: true
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:01
 tags:
-  - coding
-  - développement
-  - max_input_vars
-  - parse_str
   - php
 ---
 

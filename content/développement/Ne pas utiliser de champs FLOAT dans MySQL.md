@@ -3,7 +3,7 @@ publish: true
 created: 2025-05-01T15:10
 modified: 2025-06-17T19:56
 tags:
-  - SQL
+  - sql
 ---
 
 En fait je ne sais pas pourquoi les float existent, c’est que des sources de bugs.

@@ -3,7 +3,7 @@ publish: true
 created: 2025-06-17T15:09
 modified: 2025-06-17T19:53
 tags:
-  - SQL
+  - sql
 ---
 
 Il n'est pas possible en SQL de définir l'auto-incrément d'une table en fonction d'une requête.

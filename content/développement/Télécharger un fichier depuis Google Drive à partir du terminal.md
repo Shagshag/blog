@@ -3,9 +3,7 @@ publish: true
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:08
 tags:
-  - console
-  - google
-  - drive
+  - shell
 ---
 
 J’ai eu à restaurer un site dont les archives sont envoyées automatiquement sur Google Drive. C’est un peu compliqué pour les rapatrier depuis la console.
