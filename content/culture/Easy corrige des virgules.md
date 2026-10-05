@@ -11,6 +11,8 @@ tags:
   - culture
 ---
 
+_Also available in [[Easy Fixes the Commas - Asimov's Galley Slave|English]]._
+
 Il y a quelques jours, j’ai fait relire un texte à Claude.
 
 Rien de spectaculaire. Je lui ai demandé de faire ce que ferait un relecteur : repérer les petites erreurs, les formulations maladroites, les problèmes de ponctuation.

@@ -4,12 +4,14 @@ aliases:
   - projets/qui-repond-de-la-machine-d-ibm-aux-machines-d-asimov
 title: Qui répond de la machine ? D'IBM aux Machines d'Asimov
 created: 2026-09-25T11:32:00
-modified: 2026-09-28T12:31
+modified: 2026-10-04T16:59
 tags:
   - asimov
   - ia
   - culture
 ---
+
+_Also available in [[When We Stop Deciding - IBM, Asimov, and the Accountability Gap|English]]._
 
 Dans [[Easy corrige des virgules|l'article précédent]], Easy corrige des épreuves. Il ne décide de rien.
 
