@@ -3,7 +3,7 @@ publish: true
 title: Home
 lang: en
 created: 2026-09-28T00:00:00
-modified: 2026-10-04T17:01
+modified: 2026-10-05T11:12
 ---
 
 Hello and welcome to my site.
@@ -33,10 +33,10 @@ You can find me on
 
 | Date       | Name                                                                                                                                                                                   |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-10-09 | [[A solarpunk garden for your GitHub profile, generated daily from your contributions]]     |
 | 2026-10-05 | [[Easy Fixes the Commas - Asimov's Galley Slave]]                                                                                 |
 | 2026-10-05 | [[When We Stop Deciding - IBM, Asimov, and the Accountability Gap]]                                             |
-| 2026-10-04 | [[9 GB of Twig cache - one template compiled per page in the PrestaShop 8 back office]]     |
-| 2026-10-04 | [[The Dockerfile said `fr_FR.UTF-8`. PHP saw `C.UTF-8`]]                                                                   |
 | 2026-10-04 | [[14 minutes of cache-warmup on EFS - when a PrestaShop back office becomes unreachable]] |
+| 2026-10-04 | [[9 GB of Twig cache - one template compiled per page in the PrestaShop 8 back office]]     |
 
 <!-- SerializedQuery END -->
