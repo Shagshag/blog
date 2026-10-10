@@ -2,7 +2,7 @@
 publish: true
 title: Accueil
 created: 2025-05-09T18:36
-modified: 2026-10-09T15:39
+modified: 2026-10-10T14:37
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -26,16 +26,16 @@ Vous pouvez me retrouver sur
 
 ## Dernières modifications
 
-<!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, title AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.updated DESC LIMIT 5 -->
+<!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, link(file.path, title) AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.updated DESC LIMIT 5 -->
 
-<!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, title AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.updated DESC LIMIT 5 -->
+<!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, link(file.path, title) AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.updated DESC LIMIT 5 -->
 
-| Date            | Nom                                                                                          |
-| --------------- | -------------------------------------------------------------------------------------------- |
-| 09 octobre 2026 | aws-ecs-shell : arrêter de relire sa doc ECS Exec à chaque intervention                      |
-| 09 octobre 2026 | Un jardin solarpunk pour son profil GitHub, généré chaque jour à partir de ses contributions |
-| 04 octobre 2026 | Easy corrige des virgules                                                                    |
-| 04 octobre 2026 | Corriger les URLs propres de Quartz sur Sevalla                                              |
-| 04 octobre 2026 | Installer l'extension ssh2 pour PHP sous macOS                                               |
+| Date            | Nom                                                                                                                                                                                                       |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 09 octobre 2026 | [[aws-ecs-shell - arrêter de relire sa doc ECS Exec à chaque intervention\|aws-ecs-shell : arrêter de relire sa doc ECS Exec à chaque intervention]]                                     |
+| 09 octobre 2026 | [[Un jardin solarpunk pour son profil GitHub, généré chaque jour à partir de ses contributions]] |
+| 04 octobre 2026 | [[Easy corrige des virgules]]                                                                                                                                       |
+| 04 octobre 2026 | [[Corriger les URLs propres de Quartz sur Sevalla]]                                                                                     |
+| 04 octobre 2026 | [[Installer l'extension ssh2 pour PHP sous macOS]]                                                                                       |
 
 <!-- SerializedQuery END -->
