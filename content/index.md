@@ -32,10 +32,10 @@ Vous pouvez me retrouver sur
 
 | Date            | Nom                                                                                                                                                                                                       |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 12 octobre 2026 | [[Le code que je n'ai jamais écrit]]                                                                                                                   |
 | 09 octobre 2026 | [[aws-ecs-shell - arrêter de relire sa doc ECS Exec à chaque intervention\|aws-ecs-shell : arrêter de relire sa doc ECS Exec à chaque intervention]]                                     |
 | 09 octobre 2026 | [[Un jardin solarpunk pour son profil GitHub, généré chaque jour à partir de ses contributions]] |
 | 04 octobre 2026 | [[Easy corrige des virgules]]                                                                                                                                       |
 | 04 octobre 2026 | [[Corriger les URLs propres de Quartz sur Sevalla]]                                                                                     |
-| 04 octobre 2026 | [[Installer l'extension ssh2 pour PHP sous macOS]]                                                                                       |
 
 <!-- SerializedQuery END -->
