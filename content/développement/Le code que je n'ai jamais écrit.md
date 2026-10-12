@@ -2,7 +2,7 @@
 publish: true
 title: Le code que je n'ai jamais écrit
 created: 2026-10-11T23:55:00
-modified: 2026-10-12T00:25
+modified: 2026-10-12T08:14
 tags:
   - ia
   - claude-code
@@ -10,8 +10,6 @@ tags:
 ---
 
 _Also available in [[The code I never wrote|English]]._
-
-# Le code que je n'ai jamais écrit
 
 Au séminaire annuel de mon entreprise, mon N+1 a dit que l'IA écrivait environ 70 % du code. J'ai répondu que pour moi c'était plutôt 90 %. Les autres développeurs étaient d'accord avec moi. Après coup, ils m'ont fait remarquer qu'il n'était peut-être pas très prudent de le dire comme ça, et mon N+1 et le directeur ont paru surpris.
 

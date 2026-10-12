@@ -12,8 +12,6 @@ tags:
 
 _disponible aussi en [[Le code que je n'ai jamais écrit|Français]]._
 
-# The code I never wrote
-
 At my company's annual seminar, my manager said AI wrote about 70% of the code. I replied that for me it was closer to 90%. The other developers agreed with me. Afterwards, they pointed out that it might not have been very wise to say it like that, and my manager and the director seemed surprised.
 
 I thought about it afterwards. My number is an estimate based on my practice with Claude Code, I haven't measured anything. But more than that, we probably weren't talking about the same thing. I was talking about the code that ends up in the files. He was perhaps talking about the share of the development work that AI takes on.
