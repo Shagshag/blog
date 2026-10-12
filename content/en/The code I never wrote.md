@@ -3,7 +3,7 @@ publish: true
 title: The code I never wrote
 lang: en
 created: 2026-10-11T23:55:00
-modified: 2026-10-12T00:22
+modified: 2026-10-12T00:25
 tags:
   - ai
   - claude-code
@@ -26,7 +26,7 @@ I'm not old enough to have known punch cards, but I started in the late 1980s on
 
 My father had computer magazines that published programs to copy in BASIC. I remember spending hours on the listings of Cherry-Paint, a drawing program published by [CPC Revue in 1986](https://cpcrulez.fr/GamesTest//applications_graphic-cherry-paint_CC.htm) (in French). According to the site, the program's code was spread over five issues, and the first one had about 20 KB of code to type in (we were motivated). Part of it was BASIC, and the animation was machine code given as hexadecimal numbers. In the second installment (CPC Revue no. 6), the author provided a BASIC loader for this that asked for eight hexadecimal numbers per line, followed by a checksum. If the computed total didn't match, it asked for the line again. I didn't understand what I was copying, but the computer could tell me when I had made a mistake.
 
-![Screenshot of Cherry-Paint on Amstrad CPC](../medias/2026/10/cherry-paint.avif)
+![Screenshot of Cherry-Paint on Amstrad CPC](medias/2026/10/cherry-paint.png)
 
 ![Revue CPC no. 8 (1986) - CHERRY PAINT](medias/2026/10/magazine-cpc.jpg)
 

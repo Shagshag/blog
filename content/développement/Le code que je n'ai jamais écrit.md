@@ -2,7 +2,7 @@
 publish: true
 title: Le code que je n'ai jamais écrit
 created: 2026-10-11T23:55:00
-modified: 2026-10-12T00:23
+modified: 2026-10-12T00:25
 tags:
   - ia
   - claude-code
@@ -25,7 +25,7 @@ Je ne suis pas assez vieux pour avoir connu les cartes perforées mais j'ai comm
 
 Mon père avait des magazines d'informatique qui publiaient des programmes à recopier en BASIC. Je me souviens avoir passé des heures sur les listings de Cherry-Paint, un programme de dessin publié par [CPC Revue en 1986](https://cpcrulez.fr/GamesTest//applications_graphic-cherry-paint_CC.htm). D'après le site le code du programme était étalé sur cinq numéros et pour le premier il y avait environ 20 Ko de code à saisir (on était motivés). Une partie était du BASIC, et l'animation était du code machine donné sous forme de nombres hexadécimaux. Dans le deuxième épisode (CPC Revue n°6), l'auteur fournissait pour ça un chargeur en BASIC qui demandait huit nombres hexadécimaux par ligne, suivis d'une somme de test. Si le total calculé ne correspondait pas, il redemandait la ligne. Je ne comprenais pas ce que je recopiais, mais l'ordinateur pouvait me dire que je m'étais trompé.
 
-![Capture d'écran de Cherry-Paint sur Amstrad CPC](../medias/2026/10/cherry-paint.avif)
+![Capture d'écran de Cherry-Paint sur Amstrad CPC](medias/2026/10/cherry-paint.png)
 
 ![Revue CPC n°8 (1986) - CHERRY PAINT](medias/2026/10/magazine-cpc.jpg)
 
