@@ -1,5 +1,5 @@
 import { i18n } from "../i18n"
-import { FullSlug, getFileExtension, joinSegments, pathToRoot } from "../util/path"
+import { FullSlug, joinSegments, pathToRoot } from "../util/path"
 import { CSSResourceToStyleElement, JSResourceToScriptElement } from "../util/resources"
 import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
@@ -15,10 +15,19 @@ export default (() => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
     const title =
       (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+    // Pages sans texte (dossiers, tags) : phrase de repli construite depuis le titre.
+    // Pour la personnaliser, créer la note `<dossier>/index.md` ou `tags/<tag>.md` avec un `description:`.
+    const slug = fileData.slug ?? ""
+    const bareTitle = fileData.frontmatter?.title ?? ""
+    const fallbackDescription = slug.startsWith("tags/")
+      ? `Articles associés au tag « ${bareTitle.replace(/^Tag:\s*/, "")} » sur Shagshag.`
+      : slug.endsWith("/index") && slug !== "index"
+        ? `Articles de la rubrique « ${bareTitle.replace(/^Dossier:\s*/, "")} » sur Shagshag.`
+        : i18n(cfg.locale).propertyDefaults.description
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
-      unescapeHTML(fileData.description?.trim() ?? i18n(cfg.locale).propertyDefaults.description)
+      unescapeHTML(fileData.description?.trim() || fallbackDescription)
 
     const { css, js, additionalHead } = externalResources
 
@@ -32,7 +41,7 @@ export default (() => {
       fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some((e) => e.name === "CustomOgImages")
-    const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
+    const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.jpg`
 
     const coreStylesheet = css[0]?.content
     const coreScript = js.find(
@@ -74,10 +83,9 @@ export default (() => {
             <meta property="og:image" content={ogImageDefaultPath} />
             <meta property="og:image:url" content={ogImageDefaultPath} />
             <meta name="twitter:image" content={ogImageDefaultPath} />
-            <meta
-              property="og:image:type"
-              content={`image/${getFileExtension(ogImageDefaultPath) ?? "png"}`}
-            />
+            <meta property="og:image:type" content="image/jpeg" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
           </>
         )}
 
