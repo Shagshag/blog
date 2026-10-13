@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Programmer l'affichage des popups de la version gratuite de Popup Builder grâce au filtre sgpbOtherConditions.
 created: 2025-05-01T15:10
-modified: 2025-05-10T10:08
+modified: 2026-09-28T12:20
 tags:
   - php
   - wordpress

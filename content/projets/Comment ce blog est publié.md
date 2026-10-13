@@ -1,7 +1,8 @@
 ---
 publish: true
+description: "D'Obsidian à Quartz hébergé sur Sevalla: comment ce blog est publié, douze ans après ma recherche d'un éditeur Markdown."
 created: 2026-06-05T00:00:00
-modified: 2026-10-04T13:12
+modified: 2026-10-04T16:53
 tags:
   - obsidian
   - blog

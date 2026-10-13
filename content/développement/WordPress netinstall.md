@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Un script PHP qui télécharge et décompresse la dernière version de WordPress directement sur le serveur.
 created: 2025-05-01T15:10
-modified: 2025-05-10T08:26
+modified: 2026-09-28T12:20
 tags:
   - php
   - wordpress

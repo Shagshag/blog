@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Définir l'AUTO_INCREMENT d'une table à partir d'une requête n'est pas possible directement en SQL. Il faut passer par une procédure stockée.
 created: 2025-06-17T15:09
-modified: 2025-06-17T19:53
+modified: 2026-09-28T12:21
 tags:
   - sql
 ---

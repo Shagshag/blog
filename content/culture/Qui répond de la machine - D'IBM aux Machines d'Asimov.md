@@ -3,6 +3,7 @@ publish: true
 aliases:
   - projets/qui-repond-de-la-machine-d-ibm-aux-machines-d-asimov
 title: Qui répond de la machine ? D'IBM aux Machines d'Asimov
+description: Un ordinateur ne peut jamais être tenu pour responsable, dit la règle attribuée à IBM. Ce que ça change quand on demande à une machine de décider, avec Asimov en toile de fond.
 created: 2026-09-25T11:32:00
 modified: 2026-10-04T16:59
 tags:

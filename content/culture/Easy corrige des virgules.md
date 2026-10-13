@@ -3,8 +3,9 @@ publish: true
 aliases:
   - projets/easy-corrige-des-virgules
 title: Easy corrige des virgules
+description: Claude relit un texte et corrige des virgules, ce qui m'a rappelé la nouvelle Galley Slave d'Asimov et son robot correcteur Easy.
 created: 2026-09-11T17:02:00
-modified: 2026-10-04T17:00
+modified: 2026-10-05T10:29
 tags:
   - asimov
   - ia

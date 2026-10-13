@@ -1,6 +1,7 @@
 ---
 publish: true
 title: "`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie"
+description: Pourquoi alias fonctionne alors que class échoue dans un override when@dev de Symfony, et pourquoi préférer un faux S3 jetable à MinIO.
 created: 2026-09-10T17:01:00
 modified: 2026-10-04T17:00
 tags:

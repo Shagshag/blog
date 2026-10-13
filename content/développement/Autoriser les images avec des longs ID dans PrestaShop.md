@@ -1,5 +1,6 @@
 ---
 publish: true
+description: Pourquoi PrestaShop ne gère pas les images dont l'ID dépasse 7 chiffres, et comment le contourner.
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:06
 tags:

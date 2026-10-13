@@ -1,6 +1,7 @@
 ---
 publish: true
 title: "9 Go de cache Twig : un template compilé par page dans le back-office PrestaShop 8"
+description: Le cœur de PrestaShop 8 compile un template Twig par page du back-office avec template_from_string(), et var/cache/prod/twig a fini avec plus de 80 000 fichiers.
 created: 2026-10-03T00:00:00
 modified: 2026-10-04T16:59
 tags:

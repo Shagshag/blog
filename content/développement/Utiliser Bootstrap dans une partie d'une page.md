@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Utiliser Bootstrap dans une seule partie d'une page en l'isolant dans une classe avec LESS.
 created: 2025-05-01T15:10
-modified: 2025-05-10T10:08
+modified: 2026-09-28T12:20
 tags:
   - css
   - bootstrap

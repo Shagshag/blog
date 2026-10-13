@@ -1,5 +1,6 @@
 ---
 publish: true
+description: Décoder le code PHP obfusqué avec eval, gzinflate et base64_decode d'un module PrestaShop.
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:07
 tags:

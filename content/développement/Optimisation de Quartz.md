@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Quelques optimisations de Quartz, le générateur de site statique de ce blog, à commencer par la désactivation du plugin Latex.
 created: 2025-05-11T18:56
-modified: 2025-05-11T22:29
+modified: 2026-09-28T12:20
 tags:
   - quartz
 ---

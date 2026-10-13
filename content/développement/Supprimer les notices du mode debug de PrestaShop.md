@@ -1,5 +1,6 @@
 ---
 publish: true
+description: Le mode debug de PrestaShop 1.7 s'arrête sur la moindre notice. Comment les supprimer pour pouvoir travailler.
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:08
 tags:

@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Afficher un module dans une page CMS de PrestaShop en modifiant le fichier cms.tpl du thème.
 created: 2025-05-01T15:10
-modified: 2025-05-10T10:01
+modified: 2026-09-28T12:20
 tags:
   - prestashop
 ---

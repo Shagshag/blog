@@ -1,9 +1,10 @@
 ---
 publish: true
 title: Easy Fixes the Commas
+description: Claude proofreads a text and fixes commas, which reminded me of Asimov's story Galley Slave and its proofreading robot Easy.
 lang: en
 created: 2026-09-11T17:02:00
-modified: 2026-10-05T11:10
+modified: 2026-10-05T11:12
 tags:
   - asimov
   - ai

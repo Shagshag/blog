@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Un script de sauvegarde vers un serveur FTP qui supprime les plus anciennes sauvegardes quand la place manque et envoie un mail en cas d'erreur.
 created: 2025-05-01T15:10
-modified: 2025-05-10T10:08
+modified: 2026-09-28T12:20
 tags:
   - shell
 ---

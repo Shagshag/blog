@@ -1,8 +1,9 @@
 ---
 publish: true
 title: Accueil
+description: Georges Cubas, développeur. Articles sur la programmation, PrestaShop, Symfony, WordPress et le reste.
 created: 2025-05-09T18:36
-modified: 2026-10-10T14:37
+modified: 2026-10-13T08:10
 ---
 
 Bonjour et bienvenue sur mon site.
@@ -24,18 +25,18 @@ Vous pouvez me retrouver sur
 - [LinkedIn](https://www.linkedin.com/in/georges-cubas/)
 - [Malt](https://en.malt.fr/profile/georgescubas)
 
-## Dernières modifications
+## Derniers articles
 
-<!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, link(file.path, title) AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.updated DESC LIMIT 5 -->
+<!-- QueryToSerialize: TABLE WITHOUT ID dateformat(date(file.frontmatter.created), "dd MMMM yyyy") as Date, link(file.path, title) AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.created DESC LIMIT 5 -->
 
-<!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.updated), "dd MMMM yyyy") as Date, link(file.path, title) AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.updated DESC LIMIT 5 -->
+<!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.created), "dd MMMM yyyy") as Date, link(file.path, title) AS Nom WHERE publish = true AND file.frontmatter.title != "Accueil" AND !startswith(file.path, "en/") SORT file.frontmatter.created DESC LIMIT 5 -->
 
 | Date            | Nom                                                                                                                                                                                                       |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 12 octobre 2026 | [[Le code que je n'ai jamais écrit]]                                                                                                                   |
+| 11 octobre 2026 | [[Le code que je n'ai jamais écrit]]                                                                                                                   |
 | 09 octobre 2026 | [[aws-ecs-shell - arrêter de relire sa doc ECS Exec à chaque intervention\|aws-ecs-shell : arrêter de relire sa doc ECS Exec à chaque intervention]]                                     |
-| 09 octobre 2026 | [[Un jardin solarpunk pour son profil GitHub, généré chaque jour à partir de ses contributions]] |
-| 04 octobre 2026 | [[Easy corrige des virgules]]                                                                                                                                       |
-| 04 octobre 2026 | [[Corriger les URLs propres de Quartz sur Sevalla]]                                                                                     |
+| 08 octobre 2026 | [[Un jardin solarpunk pour son profil GitHub, généré chaque jour à partir de ses contributions]] |
+| 03 octobre 2026 | [[9 Go de cache Twig - un template compilé par page dans le back-office PrestaShop 8\|9 Go de cache Twig : un template compilé par page dans le back-office PrestaShop 8]]               |
+| 02 octobre 2026 | [[14 minutes de cache-warmup sur EFS - quand un back-office PrestaShop devient injoignable\|14 minutes de `cache:warmup` sur EFS : quand un back-office PrestaShop devient injoignable]] |
 
 <!-- SerializedQuery END -->

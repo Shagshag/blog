@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Utiliser un emoji comme favicon avec une simple balise link et une image SVG en ligne.
 created: 2025-05-11T16:00
-modified: 2025-05-12T08:35
+modified: 2026-09-28T12:20
 tags:
   - quartz
   - typescript

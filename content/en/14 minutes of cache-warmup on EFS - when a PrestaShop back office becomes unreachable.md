@@ -1,6 +1,7 @@
 ---
 publish: true
 title: "14 minutes of `cache:warmup` on EFS: when a PrestaShop back office becomes unreachable"
+description: An ordinary git pull, a fix that makes everything worse, and a PrestaShop 8 back office that stops responding because of a 14 minute cache:warmup on EFS.
 lang: en
 created: 2026-10-04T00:00:00
 modified: 2026-10-04T16:59

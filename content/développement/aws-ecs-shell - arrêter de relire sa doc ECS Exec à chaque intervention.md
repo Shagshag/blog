@@ -1,6 +1,7 @@
 ---
 publish: true
 title: "aws-ecs-shell : arrêter de relire sa doc ECS Exec à chaque intervention"
+description: aws-ecs-shell est un script Bash d'environ 250 lignes qui ouvre un shell dans une tâche ECS avec des menus numérotés, sans relire la doc ECS Exec.
 created: 2026-10-09T18:00:00
 modified: 2026-10-09T18:00:00
 tags:

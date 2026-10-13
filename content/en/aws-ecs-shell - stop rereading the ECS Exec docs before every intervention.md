@@ -1,6 +1,7 @@
 ---
 publish: true
 title: "aws-ecs-shell: stop rereading the ECS Exec docs before every intervention"
+description: aws-ecs-shell is a Bash script of about 250 lines that opens a shell in an ECS task with numbered menus, so there is no need to reread the ECS Exec docs.
 lang: en
 created: 2026-10-09T18:00:00
 modified: 2026-10-09T18:00:00

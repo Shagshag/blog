@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Lancer la calculatrice GNOME avec le point comme séparateur décimal.
 created: 2025-05-01T15:10
-modified: 2025-05-10T10:07
+modified: 2026-09-28T12:20
 tags:
   - shell
 ---

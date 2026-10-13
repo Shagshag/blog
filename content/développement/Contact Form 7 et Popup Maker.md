@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Popup Maker ne réagit plus aux envois de formulaires Contact Form 7 depuis que celui-ci a changé le nom de ses événements. Voici la correction.
 created: 2025-05-01T15:10
-modified: 2025-05-10T10:07
+modified: 2026-09-28T12:20
 tags:
   - javascript
   - wordpress

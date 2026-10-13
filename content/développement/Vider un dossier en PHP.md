@@ -1,5 +1,6 @@
 ---
 publish: true
+description: Un script PHP pour vider rapidement un dossier quand on n'a qu'un accès FTP.
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:08
 tags:

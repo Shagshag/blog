@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Une réécriture de la fonction PHP parse_str qui n'est pas limitée par max_input_vars.
 created: 2025-05-01T15:10
-modified: 2025-05-10T10:01
+modified: 2026-09-28T12:20
 tags:
   - php
 ---

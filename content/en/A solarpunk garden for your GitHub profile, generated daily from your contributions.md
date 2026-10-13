@@ -1,9 +1,10 @@
 ---
 publish: true
 title: A solarpunk garden for your GitHub profile, generated daily from your contributions
+description: My GitHub contribution graph turned into an isometric SVG garden, regenerated every day by a GitHub Action.
 lang: en
 created: 2026-10-08T23:58:00
-modified: 2026-10-09T00:05
+modified: 2026-10-09T00:09
 tags:
   - github
   - python

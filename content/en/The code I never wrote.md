@@ -1,9 +1,10 @@
 ---
 publish: true
 title: The code I never wrote
+description: When we say AI writes 70% or 90% of the code, which code are we talking about? A look at the boundaries that have already moved since the Amstrad CPC 464.
 lang: en
 created: 2026-10-11T23:55:00
-modified: 2026-10-12T00:25
+modified: 2026-10-12T09:13
 tags:
   - ai
   - claude-code

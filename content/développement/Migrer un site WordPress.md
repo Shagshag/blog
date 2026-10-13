@@ -1,5 +1,6 @@
 ---
 publish: true
+description: "Changer un site WordPress de serveur en trois étapes: les fichiers, la base de données et la configuration."
 created: 2025-05-01T15:10
 modified: 2025-05-10T10:07
 tags:

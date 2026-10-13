@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Demander à MySQL d'enregistrer toutes les requêtes pour voir celles que Doctrine envoie réellement.
 created: 2025-05-16T10:00
-modified: 2025-06-17T19:56
+modified: 2026-09-28T12:21
 tags:
   - sql
 ---

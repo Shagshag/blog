@@ -1,6 +1,7 @@
 ---
 publish: true
 title: Corriger les URLs propres de Quartz sur Sevalla
+description: Le réglage Pretty URLs de Sevalla casse les chemins CSS et JS de Quartz. Le désactiver et ajouter un fichier _redirects règle le problème.
 created: 2026-09-11T18:00:00
 modified: 2026-10-04T17:00
 tags:

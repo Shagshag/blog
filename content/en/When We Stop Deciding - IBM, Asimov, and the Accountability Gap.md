@@ -1,9 +1,10 @@
 ---
 publish: true
 title: "When We Stop Deciding: IBM, Asimov, and the Accountability Gap"
+description: A computer can never be held accountable, says the rule attributed to IBM. What changes when we ask a machine to decide, with Asimov in the background.
 lang: en
 created: 2026-09-25T11:32:00
-modified: 2026-10-05T10:20
+modified: 2026-10-05T10:29
 tags:
   - asimov
   - ai

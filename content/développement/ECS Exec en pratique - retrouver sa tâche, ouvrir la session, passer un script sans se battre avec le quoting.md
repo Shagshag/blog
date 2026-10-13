@@ -1,6 +1,7 @@
 ---
 publish: true
 title: "ECS Exec en pratique : retrouver sa tâche, ouvrir la session, passer un script sans se battre avec le quoting"
+description: "Un guide de référence sur ECS Exec: retrouver sa tâche, ouvrir la session et passer un script sans se battre avec le quoting."
 created: 2026-09-14T23:10:00
 modified: 2026-10-04T16:59
 tags:

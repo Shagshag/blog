@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Les champs FLOAT de MySQL arrondissent mal. Retour sur un bug de comptabilité et pourquoi utiliser DECIMAL.
 created: 2025-05-01T15:10
-modified: 2025-06-17T19:56
+modified: 2026-09-28T12:21
 tags:
   - sql
 ---

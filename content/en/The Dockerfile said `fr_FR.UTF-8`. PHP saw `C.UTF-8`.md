@@ -1,6 +1,7 @@
 ---
 publish: true
 title: The Dockerfile said `fr_FR.UTF-8`. PHP saw `C.UTF-8`
+description: The Dockerfile declared fr_FR.UTF-8 but PHP used C.UTF-8, which changed the result of iconv with //TRANSLIT. How the gap was found and the fix verified through ECS Exec.
 lang: en
 created: 2026-09-28T00:00:00
 modified: 2026-10-04T16:59

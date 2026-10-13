@@ -1,7 +1,8 @@
 ---
 publish: true
+description: Un script MariaDB pour anonymiser les données clients d'une base PrestaShop avant de la dupliquer en développement.
 created: 2025-05-01T15:10
-modified: 2025-05-10T10:01
+modified: 2026-09-28T12:20
 tags:
   - prestashop
   - sql

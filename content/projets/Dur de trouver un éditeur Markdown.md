@@ -1,5 +1,6 @@
 ---
 publish: true
+description: Billet de 2014 sur ma recherche d'un éditeur Markdown avec aperçu, images locales et navigation entre pages liées.
 created: 2014-06-24T10:00:00
 modified: 2026-06-06T00:24
 tags:
