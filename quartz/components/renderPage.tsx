@@ -51,25 +51,32 @@ export function pageResources(
   }
 
   const extracted = ctx?.extractedInlineResources
-  const resolvedCss: CSSResource[] = staticResources.css.map((resource) => {
-    if (!(resource.inline ?? false) || !extracted) return resource
-    const filename = extracted.get(resource.content)
-    if (!filename) return resource
-    return { content: joinSegments(baseDir, filename) }
-  })
+  // Inline resources bundled into index.css / postscript.js resolve to those files: drop them
+  const bundledCss = joinSegments(baseDir, cssFile)
+  const bundledJs = joinSegments(baseDir, postscriptFile)
+  const resolvedCss: CSSResource[] = staticResources.css
+    .map((resource) => {
+      if (!(resource.inline ?? false) || !extracted) return resource
+      const filename = extracted.get(resource.content)
+      if (!filename) return resource
+      return { content: joinSegments(baseDir, filename) }
+    })
+    .filter((resource) => resource.content !== bundledCss)
 
-  const resolvedJs: JSResource[] = staticResources.js.map((resource) => {
-    if (resource.contentType !== "inline" || !extracted) return resource
-    const filename = extracted.get(resource.script)
-    if (!filename) return resource
-    return {
-      src: joinSegments(baseDir, filename),
-      loadTime: resource.loadTime,
-      contentType: "external" as const,
-      moduleType: resource.moduleType,
-      spaPreserve: resource.spaPreserve,
-    }
-  })
+  const resolvedJs: JSResource[] = staticResources.js
+    .map((resource): JSResource => {
+      if (resource.contentType !== "inline" || !extracted) return resource
+      const filename = extracted.get(resource.script)
+      if (!filename) return resource
+      return {
+        src: joinSegments(baseDir, filename),
+        loadTime: resource.loadTime,
+        contentType: "external" as const,
+        moduleType: resource.moduleType,
+        spaPreserve: resource.spaPreserve,
+      }
+    })
+    .filter((resource) => !(resource.contentType === "external" && resource.src === bundledJs))
 
   const contentIndexPath = joinSegments(baseDir, "static/contentIndex.json")
   const contentIndexScript = `const fetchData = fetch("${contentIndexPath}").then(data => data.json())`

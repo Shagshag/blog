@@ -328,8 +328,6 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
       // that everyone else had the chance to register a listener for it
       addGlobalPageResources(ctx, componentResources)
 
-      const useHashing = !ctx.argv.serve
-
       // Separate global CSS (added by addGlobalPageResources, e.g. popover CSS)
       // from component CSS. Global CSS was pushed onto componentResources.css
       // AFTER getComponentResources() returned, so it's not in componentCssStrings.
@@ -348,45 +346,16 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
 
       const prescript = await joinScripts(componentResources.beforeDOMLoaded)
 
-      let postscript: string
-      if (!useHashing) {
-        // Serve mode: monolithic IIFE bundle for fast rebuilds
-        postscript = await joinScripts(componentResources.afterDOMLoaded)
-      } else {
-        // Production: emit each afterDOMLoaded script as an individual cached file,
-        // then generate an orchestrator that imports them with correct ordering.
-        // The last script is always the SPA router (pushed last by addGlobalPageResources),
-        // which must execute after all other scripts register their nav listeners.
-        const scripts = componentResources.afterDOMLoaded
-        const scriptFilenames: string[] = []
-
-        for (let i = 0; i < scripts.length; i++) {
-          const hash = hashContent(scripts[i])
-          const slug = `static/scripts/script-${i}-${hash}`
-          const filename = `${slug}.js`
-          scriptFilenames.push(filename)
-
-          yield write({
-            ctx,
-            slug: slug as FullSlug,
-            ext: ".js",
-            content: scripts[i],
-          })
-        }
-
-        // Generate orchestrator: import all component scripts in parallel,
-        // then import SPA router last (it dispatches the initial nav event)
-        const componentImports = scriptFilenames
-          .slice(0, -1)
-          .map((f) => `import("./${f}")`)
-          .join(",\n  ")
-
-        const spaImport = `await import("./${scriptFilenames[scriptFilenames.length - 1]}");`
-
-        postscript = [`await Promise.all([\n  ${componentImports}\n]);`, spaImport]
-          .filter(Boolean)
-          .join("\n")
-      }
+      // Everything is bundled into a single CSS and a single JS file to minimise
+      // the number of requests. Plugin inline scripts (afterDOMReady) run before the
+      // component scripts; the SPA router stays last as it dispatches the first "nav" event.
+      const inlineAfterScripts = resources.js
+        .filter((r) => r.contentType === "inline" && r.loadTime !== "beforeDOMReady")
+        .map((r) => (r as { script: string }).script)
+      const postscript = await joinScripts([
+        ...inlineAfterScripts,
+        ...componentResources.afterDOMLoaded,
+      ])
 
       const lightningTargets = {
         safari: (15 << 16) | (6 << 8), // 15.6
@@ -396,95 +365,39 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
         chrome: 109 << 16,
       }
 
-      const cssContent = transform({
-        filename: "index.css",
-        code: Buffer.from(stylesheet),
-        minify: true,
-        targets: lightningTargets,
-        include: Features.MediaQueries,
-      }).code.toString()
-
-      const cssStringToFilename = new Map<string, string>()
-      for (const cssString of componentResources.componentCssStrings) {
-        if (cssStringToFilename.has(cssString)) continue
-
-        const wrapped = `@layer quartz-base {\n${cssString}\n}`
-        const minified = transform({
-          filename: "component.css",
-          code: Buffer.from(wrapped),
+      const minifyCss = (filename: string, code: string) =>
+        transform({
+          filename,
+          code: Buffer.from(code),
           minify: true,
           targets: lightningTargets,
           include: Features.MediaQueries,
         }).code.toString()
 
-        const hash = hashContent(minified)
-        const slug = `component-${hash}`
-        const filename = `${slug}.css`
-        cssStringToFilename.set(cssString, filename)
-
-        yield write({
-          ctx,
-          slug: slug as FullSlug,
-          ext: ".css",
-          content: minified,
-        })
+      const cssParts = [minifyCss("index.css", stylesheet)]
+      for (const cssString of componentResources.componentCssStrings) {
+        cssParts.push(
+          minifyCss(
+            "component.css",
+            `@layer quartz-base {
+${cssString}
+}`,
+          ),
+        )
       }
 
-      ctx.componentCssMap = cssStringToFilename
-
-      // Extract inline CSS/JS from plugin externalResources() into external files.
-      // This prevents large inline payloads (e.g. theme CSS) from being duplicated
-      // into every HTML page's <head>.
-      const extractedInlineResources = new Map<string, string>()
-      for (const cssResource of resources.css) {
-        if (!(cssResource.inline ?? false)) continue
-
-        let output: string
+      // Plugin inline CSS goes last, same order as before.
+      const inlineCssResources = resources.css.filter((r) => r.inline ?? false)
+      for (const cssResource of inlineCssResources) {
         try {
-          output = transform({
-            filename: "plugin-resource.css",
-            code: Buffer.from(cssResource.content),
-            minify: true,
-            targets: lightningTargets,
-            include: Features.MediaQueries,
-          }).code.toString()
+          cssParts.push(minifyCss("plugin-resource.css", cssResource.content))
         } catch {
-          output = cssResource.content
+          cssParts.push(cssResource.content)
         }
-
-        const hash = hashContent(output)
-        const slug = `static/resource-style-${hash}`
-        const filename = `${slug}.css`
-        extractedInlineResources.set(cssResource.content, filename)
-
-        yield write({
-          ctx,
-          slug: slug as FullSlug,
-          ext: ".css",
-          content: output,
-        })
       }
+      const cssContent = cssParts.join("\n")
 
-      for (const jsResource of resources.js) {
-        if (jsResource.contentType !== "inline") continue
-
-        const minified = await joinScripts([jsResource.script])
-        const hash = hashContent(minified)
-        const loadTimePrefix = jsResource.loadTime === "beforeDOMReady" ? "before" : "after"
-        const slug = `static/resource-${loadTimePrefix}-${hash}`
-        const filename = `${slug}.js`
-        extractedInlineResources.set(jsResource.script, filename)
-
-        yield write({
-          ctx,
-          slug: slug as FullSlug,
-          ext: ".js",
-          content: minified,
-        })
-      }
-
-      ctx.extractedInlineResources = extractedInlineResources
-
+      const useHashing = !ctx.argv.serve
       const cssHash = useHashing ? hashContent(cssContent) : null
       const prescriptHash = useHashing ? hashContent(prescript) : null
       const postscriptHash = useHashing ? hashContent(postscript) : null
@@ -498,6 +411,19 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
         "prescript.js": `${prescriptSlug}.js`,
         "postscript.js": `${postscriptSlug}.js`,
       }
+
+      // Component CSS is already part of index.css
+      ctx.componentCssMap = new Map()
+
+      // Inline resources now live inside the bundles; renderPage dedupes them.
+      const extractedInlineResources = new Map<string, string>()
+      for (const cssResource of inlineCssResources) {
+        extractedInlineResources.set(cssResource.content, `${cssSlug}.css`)
+      }
+      for (const script of inlineAfterScripts) {
+        extractedInlineResources.set(script, `${postscriptSlug}.js`)
+      }
+      ctx.extractedInlineResources = extractedInlineResources
 
       yield write({
         ctx,
