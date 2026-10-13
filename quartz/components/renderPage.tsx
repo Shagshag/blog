@@ -90,11 +90,20 @@ export function pageResources(
       ...resolvedCss,
     ],
     js: [
-      {
-        src: joinSegments(baseDir, prescriptFile),
-        loadTime: "beforeDOMReady",
-        contentType: "external",
-      },
+      // Inlined when available: a tiny script that must run before first paint, so an
+      // external file would only add a render-blocking round trip.
+      ctx?.prescriptContent
+        ? {
+            loadTime: "beforeDOMReady",
+            contentType: "inline",
+            spaPreserve: true,
+            script: ctx.prescriptContent,
+          }
+        : {
+            src: joinSegments(baseDir, prescriptFile),
+            loadTime: "beforeDOMReady",
+            contentType: "external",
+          },
       {
         loadTime: "beforeDOMReady",
         contentType: "inline",

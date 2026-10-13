@@ -413,6 +413,7 @@ ${cssString}
       }
 
       // Component CSS is already part of index.css
+      ctx.prescriptContent = prescript
       ctx.componentCssMap = new Map()
 
       // Inline resources now live inside the bundles; renderPage dedupes them.

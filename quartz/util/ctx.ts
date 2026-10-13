@@ -48,6 +48,8 @@ export interface BuildCtx {
   virtualPages: ProcessedContent[]
   /** Content-hashed asset filenames, populated by ComponentResources emitter */
   hashedResourceNames?: HashedResourceNames
+  /** Minified prescript, inlined in each page's <head> to avoid a render-blocking request. Populated by ComponentResources. */
+  prescriptContent?: string
   /** Maps CSS content strings to their emitted hashed filenames. Populated by ComponentResources. */
   componentCssMap?: Map<string, string>
   /** Maps inline CSS/JS content to extracted external file paths. Populated by ComponentResources. */
