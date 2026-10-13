@@ -205,6 +205,12 @@
       "commit": "2993df8296f7de2306628dc0927f0f38c2a51993",
       "installedAt": "2026-10-04T11:08:06.202Z"
     },
+    "quartz-json-ld": {
+      "source": "github:Shagshag/quartz-json-ld",
+      "resolved": "https://github.com/Shagshag/quartz-json-ld.git",
+      "commit": "ee70b8a658db90faae2fc83a853fadb76bf5640b",
+      "installedAt": "2026-10-13T09:52:32.225Z"
+    },
     "quartz-markdown-article-title": {
       "source": "github:Shagshag/quartz-markdown-article-title",
       "resolved": "https://github.com/Shagshag/quartz-markdown-article-title.git",

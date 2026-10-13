@@ -394,6 +394,15 @@ plugins:
       clipboard: true
       tokenClassification: true
     order: 20
+  - source: github:Shagshag/quartz-json-ld
+    enabled: true
+    options:
+      authorName: Georges Cubas
+      authorUrl: https://www.shagshag.net/
+      siteName: Shagshag
+      rootName: Accueil
+      image: static/og-image.jpg
+    order: 50
 layout:
   groups:
     toolbar:
