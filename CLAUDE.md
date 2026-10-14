@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Working directory
+
+The `blog/` folder is the main working directory of this project. The other folders alongside it are Quartz plugins.
+
 ## What this is
 
 This is a personal fork of [Quartz v5](https://quartz.jzhao.xyz/) (`jackyzha0/quartz`), the static-site generator that powers the French-language digital garden/blog at `www.shagshag.net`. The `content/` folder is an Obsidian vault mirror: notes are authored in Obsidian, marked `publish: true` in their frontmatter, and pushed here by the `quartz-syncer` Obsidian plugin. Pushes to this repo trigger a build+deploy on Sevalla — there is no separate manual deploy step. Treat `content/**/*.md` as synced/generated data rather than something to hand-edit unless the user asks.
