@@ -250,10 +250,25 @@ plugins:
   - source: github:quartz-community/tag-page
     enabled: true
   - source: github:quartz-community/explorer
-    enabled: true
+    enabled: false
     layout:
       position: left
       priority: 50
+  - source: github:Shagshag/quartz-top-nav
+    enabled: true
+    options:
+      links:
+        - name: Accueil
+          slug: ""
+        - name: Développement
+          slug: developpement
+        - name: Projets
+          slug: projets
+        - name: Culture
+          slug: culture
+    layout:
+      position: header
+      priority: 10
   - source: github:quartz-community/graph
     enabled: false
     layout:

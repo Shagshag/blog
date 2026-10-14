@@ -240,6 +240,12 @@
       "subdir": "plugin",
       "installedAt": "2026-09-11T15:29:14.241Z"
     },
+    "quartz-top-nav": {
+      "source": "github:Shagshag/quartz-top-nav",
+      "resolved": "https://github.com/Shagshag/quartz-top-nav.git",
+      "commit": "2c3bd306260693737aaccb1cddc83aafcdbd1728",
+      "installedAt": "2026-10-13T20:13:00.414Z"
+    },
     "reader-mode": {
       "source": "github:quartz-community/reader-mode",
       "resolved": "https://github.com/quartz-community/reader-mode.git",
