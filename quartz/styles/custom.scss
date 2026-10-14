@@ -1,3 +1,9 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// The theme follows the browser setting; the darkmode plugin is kept only for
+// its script (it sets `saved-theme` from prefers-color-scheme), so hide its button.
+.darkmode {
+  display: none;
+}
