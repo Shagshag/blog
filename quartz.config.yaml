@@ -269,6 +269,13 @@ plugins:
     layout:
       position: header
       priority: 10
+  - source: github:Shagshag/quartz-top-tags
+    enabled: true
+    options:
+      limit: 8
+    layout:
+      position: left
+      priority: 50
   - source: github:quartz-community/graph
     enabled: false
     layout:

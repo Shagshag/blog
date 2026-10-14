@@ -246,6 +246,12 @@
       "commit": "2c3bd306260693737aaccb1cddc83aafcdbd1728",
       "installedAt": "2026-10-13T20:13:00.414Z"
     },
+    "quartz-top-tags": {
+      "source": "github:Shagshag/quartz-top-tags",
+      "resolved": "https://github.com/Shagshag/quartz-top-tags.git",
+      "commit": "93b657ea9d22fbb4077c285549e1cb9c6c9b1ac2",
+      "installedAt": "2026-10-14T06:04:41.504Z"
+    },
     "reader-mode": {
       "source": "github:quartz-community/reader-mode",
       "resolved": "https://github.com/quartz-community/reader-mode.git",
