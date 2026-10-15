@@ -318,7 +318,7 @@ plugins:
   - source: github:Shagshag/quartz-html-page-title
     enabled: true
     options:
-      html: 🐢<span class="desktop-only"> Shagshag<span class="site-subtitle">Notes de développement</span></span>
+      html: 🐢<span class="desktop-only"> Shagshag<span class="site-subtitle">Un pas après l'autre</span></span>
     layout:
       position: left
       priority: 10
