@@ -266,6 +266,8 @@ plugins:
           slug: projets
         - name: Culture
           slug: culture
+        - name: English
+          slug: en
     layout:
       position: header
       priority: 10
