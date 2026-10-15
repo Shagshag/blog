@@ -7,3 +7,12 @@
 .darkmode {
   display: none;
 }
+
+// Tagline under the site title (the title markup comes from quartz.config.yaml).
+.site-subtitle {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: var(--gray);
+}
