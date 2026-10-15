@@ -363,6 +363,9 @@ plugins:
     options:
       links:
         GitHub: https://github.com/Shagshag
+        LinkedIn: https://www.linkedin.com/in/georges-cubas/
+        Dev.to: https://dev.to/shagshag
+        RSS: https://www.shagshag.net/index.xml
   - source: github:quartz-community/recent-notes
     enabled: false
   - source: github:quartz-community/spacer
