@@ -3,7 +3,7 @@ publish: true
 title: Accueil
 description: Georges Cubas, développeur. Articles sur la programmation, PrestaShop, Symfony, WordPress et le reste.
 created: 2025-05-09T18:36
-modified: 2026-10-16T09:59
+modified: 2026-10-16T10:00
 ---
 
 _Also available in [[en/index|English]]._
@@ -41,10 +41,10 @@ Je suis Georges Cubas, développeur, tombé dedans quand j'étais petit. Vous tr
 
 | Date            | Nom                                                                                                                                                                                                       |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 17 octobre 2026 | [[Utiliser typescript-eslint avec TypeScript 7]]                                                                                           |
 | 11 octobre 2026 | [[Le code que je n'ai jamais écrit]]                                                                                                                   |
 | 09 octobre 2026 | [[aws-ecs-shell - arrêter de relire sa doc ECS Exec à chaque intervention\|aws-ecs-shell : arrêter de relire sa doc ECS Exec à chaque intervention]]                                     |
 | 08 octobre 2026 | [[Un jardin solarpunk pour son profil GitHub, généré chaque jour à partir de ses contributions]] |
 | 07 octobre 2026 | [[a-propos\|À propos]]                                                                                                                                                                                 |
-| 03 octobre 2026 | [[9 Go de cache Twig - un template compilé par page dans le back-office PrestaShop 8\|9 Go de cache Twig : un template compilé par page dans le back-office PrestaShop 8]]               |
 
 <!-- SerializedQuery END -->
