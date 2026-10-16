@@ -230,7 +230,7 @@ plugins:
           to: "projets/comment-ce-blog-est-publie"
         - from: "projets/dur-de-trouver-un-éditeur-markdown"
           to: "projets/dur-de-trouver-un-editeur-markdown"
-  - source: github:quartz-community/content-index
+  - source: github:Shagshag/content-index
     enabled: true
     options:
       enableSiteMap: true

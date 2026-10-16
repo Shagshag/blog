@@ -56,9 +56,9 @@
       "installedAt": "2026-10-04T07:16:08.983Z"
     },
     "content-index": {
-      "source": "github:quartz-community/content-index",
-      "resolved": "https://github.com/quartz-community/content-index.git",
-      "commit": "8c479bd40692c3e1251723f65eebb7f9fc80795f",
+      "source": "github:Shagshag/content-index",
+      "resolved": "https://github.com/Shagshag/content-index.git",
+      "commit": "14ccdc563fb38339168c19ab2653d55088c498e9",
       "installedAt": "2026-10-04T07:16:08.444Z"
     },
     "content-meta": {
