@@ -43,6 +43,25 @@ export default (() => {
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some((e) => e.name === "CustomOgImages")
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.jpg`
 
+    // `image` et `cover` sont ramenés à `socialImage` par le plugin note-properties.
+    // URL absolue utilisée telle quelle, chemin relatif résolu depuis la racine du site.
+    const customImage = fileData.frontmatter?.socialImage
+    const ogImage = customImage
+      ? /^https?:\/\//.test(customImage)
+        ? customImage
+        : `https://${cfg.baseUrl}/${customImage.replace(/^\/+/, "")}`
+      : ogImageDefaultPath
+    const ogImageExt = ogImage.split(/[?#]/)[0].split(".").pop()?.toLowerCase()
+    const ogImageType = ogImageExt
+      ? {
+          jpg: "image/jpeg",
+          jpeg: "image/jpeg",
+          png: "image/png",
+          webp: "image/webp",
+          gif: "image/gif",
+        }[ogImageExt]
+      : undefined
+
     const coreStylesheet = css[0]?.content
     const coreScript = js.find(
       (r) => r.loadTime === "beforeDOMReady" && r.contentType === "external",
@@ -80,12 +99,16 @@ export default (() => {
 
         {!usesCustomOgImage && (
           <>
-            <meta property="og:image" content={ogImageDefaultPath} />
-            <meta property="og:image:url" content={ogImageDefaultPath} />
-            <meta name="twitter:image" content={ogImageDefaultPath} />
-            <meta property="og:image:type" content="image/jpeg" />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
+            <meta property="og:image" content={ogImage} />
+            <meta property="og:image:url" content={ogImage} />
+            <meta name="twitter:image" content={ogImage} />
+            {ogImageType && <meta property="og:image:type" content={ogImageType} />}
+            {!customImage && (
+              <>
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+              </>
+            )}
           </>
         )}
 
