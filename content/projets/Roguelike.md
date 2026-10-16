@@ -21,34 +21,34 @@ Mes buts sont :
 
 Actuellement les fonctionnalités planifiées sont :
 
-- Génération aléatoire de niveau : https://roguebasin.com/index.php/Basic\_BSP\_Dungeon\_generation
-- Utilisation de niveaux prédéfinis
-- Zones visibles, zones visités
-- Points de vie
-- Armure / Arme
-- Inventaire
-- Nourriture / items
-- Ennemis
-- Expérience
-- PNJ
-- Sources de lumière
-- Sources de son
+- [ ] Génération aléatoire de niveau : https://roguebasin.com/index.php/Basic\_BSP\_Dungeon\_generation
+- [ ] Utilisation de niveaux prédéfinis
+- [ ] Zones visibles, zones visités
+- [ ] Points de vie
+- [ ] Armure / Arme
+- [ ] Inventaire
+- [ ] Nourriture / items
+- [ ] Ennemis
+- [ ] Expérience
+- [ ] PNJ
+- [ ] Sources de lumière
+- [ ] Sources de son
 
 ### Moteurs de rendu
 
 Actuellement les moteurs de rendu planifiés sont :
 
-- ASCII comme le rogue classique
+- [ ] ASCII comme le rogue classique
   [![](https://upload.wikimedia.org/wikipedia/commons/1/17/Rogue_Screen_Shot_CAR.PNG)](https://commons.wikimedia.org/wiki/File:Rogue_Screen_Shot_CAR.PNG)
-- Vue 2D plate
+- [ ] Vue 2D plate
   [![](https://private-user-images.githubusercontent.com/38101123/244099660-6c2f4e46-c19e-44f2-8cc4-af33367596e2.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzU0NjI2MzYsIm5iZiI6MTc3NTQ2MjMzNiwicGF0aCI6Ii8zODEwMTEyMy8yNDQwOTk2NjAtNmMyZjRlNDYtYzE5ZS00NGYyLThjYzQtYWYzMzM2NzU5NmUyLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjA0MDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwNDA2VDA3NTg1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBhMTk5ODdiMjAyNjk2NTgyYjRmMzg2YWY0NzZkZTYwNTE4ODhjNzk4NTNkNWZmNzJjMzMwMTliNzFhNTkwYTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.xF-NyyUGo5hkz9Zaq14L8nbPLuPQ_Au96JKVMO-63yM)](https://github.com/benbenwsh/Hero-s-Rebirth)
-- Vue isométrique à la Diablo https://phaser.io/examples/v3.85.0/tilemap/isometric/view/create-isometric-manually
+- [ ] Vue isométrique à la Diablo https://phaser.io/examples/v3.85.0/tilemap/isometric/view/create-isometric-manually
   ![[medias/Pasted image 20260406095811.png]]
-- Vue 3D à la [Lands of Lore: The Throne of Chaos](https://en.wikipedia.org/wiki/Lands_of_Lore:_The_Throne_of_Chaos)
+- [ ] Vue 3D à la [Lands of Lore: The Throne of Chaos](https://en.wikipedia.org/wiki/Lands_of_Lore:_The_Throne_of_Chaos)
   ![[medias/Pasted image 20260406095618.png]]
-- Vue 3D à la DOOM https://phaser.io/news/2026/04/twopointfive-pseudo-3d-phaser-3-plugin
+- [ ] Vue 3D à la DOOM https://phaser.io/news/2026/04/twopointfive-pseudo-3d-phaser-3-plugin
   ![[medias/Pasted image 20260406105936.png]]
-- Vue 3D https://enable3d.io/
+- [ ] Vue 3D https://enable3d.io/
   [![](https://dungeon-crawlers.2gam.net/screenshot/172_2_arcmaze-3d-browser-based-mmo.jpg)](https://dungeon-crawlers.2gam.net/arcmaze)
 
 ## Journal
