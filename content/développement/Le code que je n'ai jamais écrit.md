@@ -3,12 +3,12 @@ publish: true
 title: Le code que je n'ai jamais écrit
 description: Quand on dit que l'IA écrit 70 % ou 90 % du code, de quel code parle-t-on ? Un retour sur les frontières qui ont bien bougé depuis l'Amstrad CPC 464.
 created: 2026-10-11T23:55:00
-modified: 2026-10-16T09:45
+modified: 2026-10-16T09:48
 tags:
   - ia
   - claude-code
   - retour-d-experience
-socialImage: medias/2026/10/le-code-que-je-n-ai-jamais-ecrit.png
+socialImage: "[[le-code-que-je-n-ai-jamais-ecrit.png]]"
 ---
 
 _Also available in [[The code I never wrote|English]]._
