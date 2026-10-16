@@ -3,27 +3,35 @@ publish: true
 title: Accueil
 description: Georges Cubas, développeur. Articles sur la programmation, PrestaShop, Symfony, WordPress et le reste.
 created: 2025-05-09T18:36
-modified: 2026-10-13T08:10
+modified: 2026-10-16T09:59
 ---
+
+_Also available in [[en/index|English]]._
 
 Bonjour et bienvenue sur mon site.
 
-Je suis Georges Cubas, tombé dans la programmation depuis que mon père a acheté un [Amstrad CPC 464](https://fr.wikipedia.org/wiki/Amstrad_CPC_464) au milieu des années 1980.
+Je suis Georges Cubas, développeur, tombé dedans quand j'étais petit. Vous trouverez ici surtout des articles techniques, mais pas uniquement j'espère. Pour en savoir plus sur moi et sur ce site, il y a la page [[a-propos|À propos]].
 
-Vous trouverez ici principalement des articles sur ce sujet mais pas uniquement j'espère.
+## Quelques articles
 
-Cela doit être la quatrième version de ce site. Il a commencé vers 2006 par un blog sur la plateforme d'[Opéra](https://fr.wikipedia.org/wiki/Opera) que j'aimais beaucoup. Malheureusement j'en ai perdu le contenu. Ensuite Je suis allé sur [Tumblr](https://fr.wikipedia.org/wiki/Tumblr) (c'était la mode à l'époque), puis j'ai installé [WordPress](https://wordpress.org/) et enfin cette version qui est un [site statique](https://fr.wikipedia.org/wiki/Page_web_statique) généré par [Quartz](https://quartz.jzhao.xyz/)
+**Technique**
 
-Bonne visite.
+- [[14 minutes de cache-warmup sur EFS - quand un back-office PrestaShop devient injoignable|14 minutes de `cache:warmup` sur EFS : quand un back-office PrestaShop devient injoignable]]
+- [[9 Go de cache Twig - un template compilé par page dans le back-office PrestaShop 8|9 Go de cache Twig : un template compilé par page dans le back-office PrestaShop 8]]
+- [[Le Dockerfile disait `fr_FR.UTF-8`. PHP voyait `C.UTF-8`]]
+- [[`class` ou `alias`, un choix de conteneur Symfony, et un choix d'ingénierie]]
 
-Vous pouvez me retrouver sur
+**Projets**
 
-- [Mastodon](https://mamot.fr/@shagshag)
-- [Github](https://github.com/Shagshag)
-- [Dev.to](https://dev.to/shagshag)
-- [Stack Overflow](https://stackoverflow.com/users/14401261/george-cubas)
-- [LinkedIn](https://www.linkedin.com/in/georges-cubas/)
-- [Malt](https://en.malt.fr/profile/georgescubas)
+- [[Roguelike]]
+- [[Un jardin solarpunk pour son profil GitHub, généré chaque jour à partir de ses contributions]]
+- [[Comment ce blog est publié]]
+
+**Culture**
+
+- [[Qui répond de la machine - D'IBM aux Machines d'Asimov]]
+- [[Le code que je n'ai jamais écrit]]
+- [[Easy corrige des virgules]]
 
 ## Derniers articles
 
@@ -36,7 +44,7 @@ Vous pouvez me retrouver sur
 | 11 octobre 2026 | [[Le code que je n'ai jamais écrit]]                                                                                                                   |
 | 09 octobre 2026 | [[aws-ecs-shell - arrêter de relire sa doc ECS Exec à chaque intervention\|aws-ecs-shell : arrêter de relire sa doc ECS Exec à chaque intervention]]                                     |
 | 08 octobre 2026 | [[Un jardin solarpunk pour son profil GitHub, généré chaque jour à partir de ses contributions]] |
+| 07 octobre 2026 | [[a-propos\|À propos]]                                                                                                                                                                                 |
 | 03 octobre 2026 | [[9 Go de cache Twig - un template compilé par page dans le back-office PrestaShop 8\|9 Go de cache Twig : un template compilé par page dans le back-office PrestaShop 8]]               |
-| 02 octobre 2026 | [[14 minutes de cache-warmup sur EFS - quand un back-office PrestaShop devient injoignable\|14 minutes de `cache:warmup` sur EFS : quand un back-office PrestaShop devient injoignable]] |
 
 <!-- SerializedQuery END -->
