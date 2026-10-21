@@ -4,7 +4,7 @@ title: Home
 description: Georges Cubas, developer. Articles about programming, PrestaShop, Symfony, WordPress and more.
 lang: en
 created: 2026-09-28T00:00:00
-modified: 2026-10-16T10:01
+modified: 2026-10-17T00:22
 ---
 
 _Also available in [[index|French]]._
@@ -38,12 +38,12 @@ I'm Georges Cubas, a developer who fell into it as a kid. You'll mostly find tec
 
 <!-- SerializedQuery: TABLE WITHOUT ID dateformat(date(file.frontmatter.created), "yyyy-MM-dd") as Date, link(file.path, title) AS Name WHERE publish = true AND file.frontmatter.title != "Home" AND startswith(file.path, "en/") SORT file.frontmatter.created DESC LIMIT 5 -->
 
-| Date       | Name                                                                                                                                                                               |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2026-10-17 | [[Using typescript-eslint with TypeScript 7]]                                                                                     |
-| 2026-10-11 | [[The code I never wrote]]                                                                                                                           |
-| 2026-10-09 | [[aws-ecs-shell - stop rereading the ECS Exec docs before every intervention\|aws-ecs-shell: stop rereading the ECS Exec docs before every intervention]]                    |
-| 2026-10-08 | [[A solarpunk garden for your GitHub profile, generated daily from your contributions]] |
-| 2026-10-07 | [[about\|About]]                                                                                                                                                             |
+| Date       | Name                                                                                                                                                                                |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2026-10-21 | [[A Dockerfile that says where it failed - splitting the RUN and retrying pecl install\|A Dockerfile that says where it failed: splitting the RUN and retrying pecl install]] |
+| 2026-10-17 | [[Using typescript-eslint with TypeScript 7]]                                                                                      |
+| 2026-10-11 | [[The code I never wrote]]                                                                                                                            |
+| 2026-10-09 | [[aws-ecs-shell - stop rereading the ECS Exec docs before every intervention\|aws-ecs-shell: stop rereading the ECS Exec docs before every intervention]]                     |
+| 2026-10-08 | [[A solarpunk garden for your GitHub profile, generated daily from your contributions]]  |
 
 <!-- SerializedQuery END -->

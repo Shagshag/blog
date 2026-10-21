@@ -3,9 +3,10 @@ publish: true
 title: Installer l'extension ssh2 pour PHP sous macOS
 description: Installer l'extension PHP ssh2 sous macOS avec Homebrew, étape par étape.
 created: 2025-07-31T09:41
-modified: 2026-10-04T17:00
+modified: 2026-10-21T23:04
 tags:
   - php
+  - pecl
   - shell
 ---
 
