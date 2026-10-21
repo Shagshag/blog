@@ -3,12 +3,13 @@ publish: true
 title: "Un Dockerfile qui dit où il a planté : découper le RUN et réessayer pecl install"
 description: "Un build cassé par un 504 de pecl.php.net après l'annonce de sécurité de PHP : découper un RUN géant pour localiser l'erreur, puis réessayer pecl install extension par extension."
 created: 2026-10-21T22:59:00
-modified: 2026-10-21T22:59
+modified: 2026-10-21T23:01
 tags:
   - docker
   - php
   - pecl
   - retour-d-experience
+socialImage: medias/2026/10/un-dockerfile-qui-dit-ou-il-a-plante-decouper-le-run-et-reessayer-pecl-install.png
 ---
 
 _Un build en CI cassé par un 504 de pecl.php.net, noyé au milieu de 40 lignes de `&&`_
