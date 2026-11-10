@@ -58,7 +58,7 @@
     "content-index": {
       "source": "github:Shagshag/content-index",
       "resolved": "https://github.com/Shagshag/content-index.git",
-      "commit": "14ccdc563fb38339168c19ab2653d55088c498e9",
+      "commit": "056b517f2dbeb6e846ca6f4fd846d5f2fb6936df",
       "installedAt": "2026-10-04T07:16:08.444Z"
     },
     "content-meta": {
